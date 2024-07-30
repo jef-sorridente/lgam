@@ -3,11 +3,19 @@ import styled from "styled-components";
 export const Card = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 32%;
+  width: 32%;
   background-color: #202127;
   padding: 16px;
   border-radius: 16px;
   margin-bottom: 27px;
+
+  @media (max-width: 768px) {
+    width: 49%;
+  }
+
+  @media (max-width: 425px) {
+    width: 100%;
+  }
 `;
 
 export const Header = styled.header`

@@ -3,10 +3,6 @@ import styled from "styled-components";
 export const List = styled.ul`
   display: flex;
   gap: 32px;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
 `;
 
 export const ItemList = styled.li`

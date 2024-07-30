@@ -23,8 +23,10 @@ export const ContainerCard = styled.div`
   gap: 2%;
 
   @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
+    gap: 2%;
+  }
+
+  @media (max-width: 425px) {
+    width: 100%;
   }
 `;
