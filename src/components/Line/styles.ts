@@ -7,10 +7,14 @@ export const Container = styled.div`
   rotate: -15deg;
   position: absolute;
   bottom: 100px;
-  right: -100px;
+  right: -400px;
   z-index: -100;
   filter: opacity(60%);
-  width: 100%;
+  width: 120%;
+
+  @media (max-width: 425px) {
+    right: -50px;
+  }
 `;
 
 const Line = styled.span`

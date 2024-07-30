@@ -14,6 +14,17 @@ const StyleGlobal = createGlobalStyle`
       color: #DFDFD6;
       overflow-x: hidden;
     }
+
+    /*Global Anim */
+
+    @keyframes anim-opacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
 `;
 
 export const Container = styled.div`
@@ -21,10 +32,7 @@ export const Container = styled.div`
   width: 100%;
   margin: auto;
   margin-bottom: 80px;
-
-  @media (max-width: 1024px) {
-    padding: 5vw;
-  }
+  padding: 5vw;
 `;
 
 export default StyleGlobal;

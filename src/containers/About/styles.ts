@@ -32,11 +32,26 @@ export const ContainerTexts = styled.div`
   padding: 16px;
   border-radius: 8px;
   height: 100%;
-  background-color: #1b1b1ff2;
-  border: 1px solid #1b1b1f;
+  overflow: hidden;
+  position: relative;
+  animation: anim-opacity 1s ease both;
+
+  ::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: rgba(27, 27, 31, 0.2);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+  }
 `;
 
 export const Image = styled.img`
+  animation: anim-opacity 2s ease both;
   max-width: 500px;
 
   @media (max-width: 1024px) {

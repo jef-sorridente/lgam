@@ -33,6 +33,10 @@ export const Title = styled.h3`
   padding: 16px;
   color: #fff;
   font-weight: 400;
+
+  @media (max-width: 425px) {
+    font-size: 16px;
+  }
 `;
 
 export const Date = styled.div`

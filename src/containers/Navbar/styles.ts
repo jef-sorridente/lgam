@@ -1,9 +1,22 @@
 import styled from "styled-components";
+import { IoClose } from "react-icons/io5";
 
 export const Header = styled.header`
-  background-color: #1b1b1ff2;
   position: sticky;
   top: 0;
+  z-index: 1;
+
+  ::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: rgba(27, 27, 31, 0.1);
+    backdrop-filter: blur(5px);
+  }
 `;
 
 export const Content = styled.div`
@@ -20,4 +33,8 @@ export const Content = styled.div`
 
   @media (max-width: 768px) {
   }
+`;
+
+export const IoCloseCustom = styled(IoClose)`
+  z-index: 1;
 `;
