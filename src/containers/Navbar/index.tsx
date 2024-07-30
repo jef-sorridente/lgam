@@ -19,9 +19,7 @@ const Navbar = () => {
   const isMobile = windowSize <= 768;
 
   const handleClick = () => {
-    if (isMobile) {
-      setToggleButtom(!toggleButtom);
-    }
+    setToggleButtom(!toggleButtom);
   };
 
   return (
@@ -32,7 +30,7 @@ const Navbar = () => {
           <>
             {toggleButtom ? (
               <>
-                <MainList />
+                <MainList onItemClick={handleClick} />
                 <S.IoCloseCustom fontSize={32} onClick={handleClick} />
               </>
             ) : (

@@ -17,6 +17,11 @@ export const Header = styled.header`
     background: rgba(27, 27, 31, 0.1);
     backdrop-filter: blur(5px);
   }
+  @media (max-width: 768px) {
+    ::before {
+      background: rgba(27, 27, 31, 0.3);
+    }
+  }
 `;
 
 export const Content = styled.div`

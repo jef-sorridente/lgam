@@ -44,9 +44,14 @@ export const ContainerTexts = styled.div`
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: rgba(27, 27, 31, 0.2);
-    border-radius: 16px;
+    background: rgba(27, 27, 31, 0.3);
     backdrop-filter: blur(5px);
+  }
+
+  @media (max-width: 768px) {
+    ::before {
+      background: rgba(27, 27, 31, 0.3);
+    }
   }
 `;
 

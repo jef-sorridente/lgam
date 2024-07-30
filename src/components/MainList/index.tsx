@@ -1,20 +1,32 @@
 import { NavLink } from "react-router-dom";
 import * as S from "./styles";
 
-const MainList = () => {
+type Props = {
+  onItemClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
+};
+
+const MainList = ({ onItemClick }: Props) => {
   return (
     <S.List>
       <S.ItemList>
-        <NavLink to="/">Sobre</NavLink>
+        <NavLink to="/" onClick={onItemClick}>
+          Sobre
+        </NavLink>
       </S.ItemList>
       <S.ItemList>
-        <NavLink to="/eventos">Eventos</NavLink>
+        <NavLink to="/eventos" onClick={onItemClick}>
+          Eventos
+        </NavLink>
       </S.ItemList>
       <S.ItemList>
-        <NavLink to="/galeria">Galeria</NavLink>
+        <NavLink to="/galeria" onClick={onItemClick}>
+          Galeria
+        </NavLink>
       </S.ItemList>
       <S.ItemList>
-        <NavLink to="#contato">Contato</NavLink>
+        <NavLink to="#contato" onClick={onItemClick}>
+          Contato
+        </NavLink>
       </S.ItemList>
     </S.List>
   );

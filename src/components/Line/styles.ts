@@ -11,6 +11,7 @@ export const Container = styled.div`
   z-index: -100;
   filter: opacity(60%);
   width: 120%;
+  z-index: -2;
 
   @media (max-width: 425px) {
     right: -50px;
