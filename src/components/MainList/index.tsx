@@ -1,11 +1,20 @@
+import { NavLink } from "react-router-dom";
 import * as S from "./styles";
 
 const MainList = () => (
   <S.List>
-    <S.ItemList>Sobre</S.ItemList>
-    <S.ItemList>Eventos</S.ItemList>
-    <S.ItemList>Galeria</S.ItemList>
-    <S.ItemList>Contato</S.ItemList>
+    <S.ItemList>
+      <NavLink to="/">Sobre</NavLink>
+    </S.ItemList>
+    <S.ItemList>
+      <NavLink to="/eventos">Eventos</NavLink>
+    </S.ItemList>
+    <S.ItemList>
+      <NavLink to="/galeria">Galeria</NavLink>
+    </S.ItemList>
+    <S.ItemList>
+      <NavLink to="/contato">Contato</NavLink>
+    </S.ItemList>
   </S.List>
 );
 

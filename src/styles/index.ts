@@ -7,6 +7,7 @@ const StyleGlobal = createGlobalStyle`
         box-sizing: border-box;
         font-family: "Inter Tight", sans-serif;
         list-style: none;
+        text-decoration: none;
     }
     body{
       background-color: #1B1B1F;
