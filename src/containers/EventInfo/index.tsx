@@ -4,12 +4,14 @@ import Title from "../../components/Title";
 import * as S from "./styles";
 
 import { Events } from "./events";
+import Line from "../../components/Line";
 
 const EventosInfo = () => (
   <S.Container>
+    <Line />
     <S.ConatinerSection>
       <Title>Eventos</Title>
-      <Text>Nossos eventos!</Text>
+      <Text>Fique por dentro dos nosso eventos, seminários e cursos!</Text>
     </S.ConatinerSection>
     <S.ContainerCard>
       {Events.map((ev) => (

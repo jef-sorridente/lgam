@@ -31,8 +31,7 @@ export const Container = styled.div`
   max-width: 1366px;
   width: 100%;
   margin: auto;
-  margin-bottom: 80px;
-  padding: 5vw;
+  padding: 5vw 5vw 0 5vw;
 `;
 
 export default StyleGlobal;

@@ -8,7 +8,7 @@ export const Events = [
   },
   {
     id: 2,
-    title: "Torneio Regional de Taekwondo - Categoria Juvenil",
+    title: "Torneio Regional de Taekwondo",
     day: 8,
     month: "set",
     location: "Centro de Treinamento Taekwondo, Rio de Janeiro, RJ",
@@ -22,7 +22,7 @@ export const Events = [
   },
   {
     id: 4,
-    title: "Torneio Nacional de Taekwondo - Open Tournament",
+    title: "Torneio Nacional de Taekwondo - Open",
     day: 30,
     month: "ago",
     location: "Academia Taekwondo Pro, Belo Horizonte, MG",
@@ -36,7 +36,7 @@ export const Events = [
   },
   {
     id: 6,
-    title: "Campeonato Estadual de Taekwondo - Categorias Avançadas",
+    title: "Campeonato Estadual de Taekwondo ",
     day: 18,
     month: "out",
     location: "Complexo Esportivo Estadual, Curitiba, PR",

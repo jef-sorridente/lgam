@@ -20,6 +20,10 @@ const Navbar = () => {
 
   const handleClick = () => {
     setToggleButtom(!toggleButtom);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -39,7 +43,7 @@ const Navbar = () => {
           </>
         ) : (
           <>
-            <MainList />
+            <MainList onItemClick={handleClick} />
           </>
         )}
       </S.Content>

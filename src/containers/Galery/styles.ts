@@ -13,22 +13,8 @@ export const Container = styled.section`
   }
 `;
 
-export const ConatinerSection = styled.div`
-  text-align: center;
-`;
-
-export const ContainerCard = styled.div`
+export const ContainerCards = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
-  animation: anim-opacity 2s ease both;
-  gap: 2%;
-
-  @media (max-width: 768px) {
-    gap: 2%;
-  }
-
-  @media (max-width: 425px) {
-    width: 100%;
-  }
+  gap: 0.5%;
 `;
