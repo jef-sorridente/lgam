@@ -13,6 +13,7 @@ const MainList = ({ onItemClick }: Props) => {
           Sobre
         </NavLink>
       </S.ItemList>
+
       <S.ItemList>
         <NavLink to="/eventos" onClick={onItemClick}>
           Eventos
@@ -21,6 +22,11 @@ const MainList = ({ onItemClick }: Props) => {
       <S.ItemList>
         <NavLink to="/galeria" onClick={onItemClick}>
           Galeria
+        </NavLink>
+      </S.ItemList>
+      <S.ItemList>
+        <NavLink to="/filiados" onClick={onItemClick}>
+          Filiados
         </NavLink>
       </S.ItemList>
       <S.ItemList>
