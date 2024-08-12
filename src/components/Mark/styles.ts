@@ -7,7 +7,8 @@ export const Container = styled.div`
 `;
 
 export const Image = styled.img`
-  max-width: 80px;
+  width: 80px;
+  height: 80px;
 
   @media (max-width: 768px) {
     max-width: 60px;
