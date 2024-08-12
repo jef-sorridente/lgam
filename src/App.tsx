@@ -4,7 +4,7 @@ import EventosInfo from "./pages/EventInfo";
 import Galery from "./pages/Galery";
 import Navbar from "./containers/Navbar";
 import StyleGlobal, { Container } from "./styles";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Ranking from "./pages/Ranking";
 
 const Rotas = () => (
@@ -19,13 +19,13 @@ const Rotas = () => (
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <StyleGlobal />
       <Navbar />
       <Container>
         <Rotas />
       </Container>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
