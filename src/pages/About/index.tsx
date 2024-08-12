@@ -1,4 +1,4 @@
-import image from "../../assets/images/image.png";
+import image from "../../assets/images/image.webp";
 import CardVal from "../../components/CardVal";
 import Line from "../../components/Line";
 import Text from "../../components/Text";

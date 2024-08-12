@@ -1,6 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components";
 
 const StyleGlobal = createGlobalStyle`
+
     *{
         margin: 0;
         padding: 0;
@@ -9,10 +10,12 @@ const StyleGlobal = createGlobalStyle`
         list-style: none;
         text-decoration: none;
     }
+
     body{
       background-color: #1B1B1F;
       color: #DFDFD6;
       overflow-x: hidden;
+      
     }
 
     /*Global Anim */

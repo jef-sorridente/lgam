@@ -1,6 +1,6 @@
 import { useState } from "react";
 import * as S from "./styles";
-import imageteste from "../../assets/images/perfil.png";
+import imageteste from "../../assets/images/perfil.webp";
 
 const ItemAf = () => {
   const [openItem, setOpenItem] = useState(false);
