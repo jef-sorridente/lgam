@@ -4,66 +4,28 @@ import EventosInfo from "./pages/EventInfo";
 import Galery from "./pages/Galery";
 import Navbar from "./containers/Navbar";
 import StyleGlobal, { Container } from "./styles";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Ranking from "./pages/Ranking";
 
-const rotas = createBrowserRouter([
-  {
-    path: "/",
-    element: (
-      <>
-        <Navbar />
-        <Container>
-          <About />
-        </Container>
-      </>
-    ),
-  },
-  {
-    path: "/eventos",
-    element: (
-      <>
-        <Navbar />
-        <Container>
-          <EventosInfo />
-        </Container>
-      </>
-    ),
-  },
-  {
-    path: "/galeria",
-    element: (
-      <>
-        <Navbar />
-        <Container>
-          <Galery />
-        </Container>
-      </>
-    ),
-  },
-  {
-    path: "/filiados",
-    element: (
-      <>
-        <Navbar />
-        <Container>
-          <Ranking />
-        </Container>
-      </>
-    ),
-  },
-  {
-    path: "*",
-    element: <ErrorPage />,
-  },
-]);
+const Rotas = () => (
+  <Routes>
+    <Route path="/" element={<About />} />
+    <Route path="/eventos" element={<EventosInfo />} />
+    <Route path="/galeria" element={<Galery />} />
+    <Route path="/filiados" element={<Ranking />} />
+    <Route path="*" element={<ErrorPage />} />
+  </Routes>
+);
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <StyleGlobal />
-      <RouterProvider router={rotas} />
-    </>
+      <Navbar />
+      <Container>
+        <Rotas />
+      </Container>
+    </BrowserRouter>
   );
 }
 
