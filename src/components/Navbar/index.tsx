@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import MainList from "../../components/MainList";
-import Mark from "../../components/Mark";
+import MainList from "../MainList";
+import Mark from "../Mark";
 import * as S from "./styles";
 
 import { FaBarsStaggered } from "react-icons/fa6";

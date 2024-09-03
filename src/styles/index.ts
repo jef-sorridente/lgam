@@ -11,10 +11,13 @@ const StyleGlobal = createGlobalStyle`
         text-decoration: none;
     }
 
+    html{
+      overflow-x: hidden;
+    }
+
     body{
       background-color: #1B1B1F;
-      color: #DFDFD6;
-      overflow-x: hidden;
+      color: #DFDFD6;      
       
     }
 
