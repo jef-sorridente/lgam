@@ -9,7 +9,8 @@ const StyleGlobal = createGlobalStyle`
         font-family: "Inter Tight", sans-serif;
         list-style: none;
         text-decoration: none;
-    }
+        object-fit: contain;
+    } 
 
     html{
       overflow-x: hidden;
@@ -31,13 +32,17 @@ const StyleGlobal = createGlobalStyle`
       opacity: 100%;
     }
   }
+  
 `;
 
 export const Container = styled.div`
   max-width: 1366px;
   width: 100%;
   margin: auto;
-  padding: 5vw 5vw 0 5vw;
+
+  @media (max-width: 1366px) {
+    padding: 0 5vw;
+  }
 `;
 
 export default StyleGlobal;

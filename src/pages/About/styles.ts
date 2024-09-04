@@ -1,10 +1,31 @@
 import styled from "styled-components";
 
+import Lottie from "lottie-react";
+import variables from "../../styles/variables";
+
+export const Animation = styled(Lottie)`
+  position: relative;
+  left: 0;
+  right: 0;
+  z-index: -2;
+`;
+
+export const AnimationLines = styled(Animation)`
+  top: 20vh;
+`;
+
+export const AnimationCircle = styled(Animation)`
+  bottom: 0;
+`;
+
+export const ContainerAnimation = styled.div`
+  position: absolute;
+  left: 0;
+`;
+
 export const Container = styled.section`
-  padding: 100px 0;
   display: flex;
   flex-direction: column;
-  gap: 200px;
 
   @media (max-width: 768px) {
     padding: 100px 0;
@@ -15,7 +36,9 @@ export const Container = styled.section`
 export const ConatinerSection = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 16px;
+  height: calc(100vh - 96px);
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -27,40 +50,28 @@ export const ConatinerSection = styled.div`
 export const ContainerTexts = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 600px;
+  width: 50%;
   gap: 16px;
   padding: 16px;
-  border-radius: 8px;
-  height: 100%;
-  overflow: hidden;
+
   position: relative;
   animation: anim-opacity 1s ease both;
+  background: rgba(27, 27, 31, 0.9);
+  border-radius: 16px;
 
-  ::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
+  @media (max-width: 1024px) {
     width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: rgba(27, 27, 31, 0.3);
-    backdrop-filter: blur(5px);
-  }
-
-  @media (max-width: 768px) {
-    ::before {
-      background: rgba(27, 27, 31, 0.3);
-    }
   }
 `;
 
 export const Image = styled.img`
+  width: 50%;
   animation: anim-opacity 2s ease both;
-  max-width: 500px;
+  border-end-start-radius: 25%;
+  border-end-end-radius: 40%;
 
   @media (max-width: 1024px) {
-    max-width: 350px;
+    max-width: 450px;
   }
 
   @media (max-width: 768px) {
@@ -74,9 +85,23 @@ export const ContainerCards = styled.div`
   align-items: center;
   justify-content: center;
   gap: 64px;
-
+  padding: 16px;
+  background: rgba(27, 27, 31, 0.9);
   h2 {
     width: 100%;
     text-align: center;
+  }
+`;
+
+export const Icons = styled.span`
+  font-size: 32px;
+  a {
+    color: ${variables.txtColor1};
+    transition: 0.5s;
+  }
+
+  a:hover {
+    transition: 0.5s;
+    color: ${variables.txtColor3};
   }
 `;

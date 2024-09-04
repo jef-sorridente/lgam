@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import variables from "../../styles/variables";
+import { animated } from "@react-spring/web";
 
 export const Container = styled.div`
   border: 1px solid ${variables.bgColor2};
@@ -36,23 +37,69 @@ export const Action = styled.li`
   cursor: pointer;
 `;
 
-export const ContainerInfos = styled.div`
+export const ContainerInfos = styled(animated.div)`
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100vw;
-  padding: 32px 350px;
+
   background-color: ${variables.bgColor3};
   display: flex;
   justify-content: space-between;
   align-items: start;
+  overflow: hidden;
 `;
 
 export const Infos = styled.div`
+  max-width: 1366px;
+  width: 100%;
+  margin: auto;
   display: flex;
+
+  height: 200px;
+  padding: 16px;
   gap: 32px;
+  position: relative;
+
+  @media (max-width: 1366px) {
+    padding: 0 5vw;
+  }
+
+  > span {
+    position: absolute;
+    right: 0;
+    top: 8;
+    cursor: pointer;
+  }
+`;
+
+export const InfosRow = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 40px 1fr;
+
+  h3 {
+    font-size: 24px;
+    grid-column: span 2;
+  }
+`;
+
+export const InfosCollum = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  div {
+    display: flex;
+
+    h4 {
+      margin-right: 8px;
+    }
+  }
 `;
 
 export const Img = styled.img`
-  height: 100px;
+  width: 168px;
+  height: 168px;
+  object-fit: cover;
 `;
