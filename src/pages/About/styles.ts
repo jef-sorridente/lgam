@@ -3,6 +3,16 @@ import styled from "styled-components";
 import Lottie from "lottie-react";
 import variables from "../../styles/variables";
 
+type ConatinerSectionProps = {
+  flexDirection?: "collum" | "column-reverse";
+};
+
+export const ContainerAnimation = styled.div`
+  position: absolute;
+  left: 0;
+  right: 0;
+`;
+
 export const Animation = styled(Lottie)`
   position: relative;
   left: 0;
@@ -12,15 +22,14 @@ export const Animation = styled(Lottie)`
 
 export const AnimationLines = styled(Animation)`
   top: 20vh;
+
+  @media (max-width: 768px) {
+    top: 60vh;
+  }
 `;
 
 export const AnimationCircle = styled(Animation)`
   bottom: 0;
-`;
-
-export const ContainerAnimation = styled.div`
-  position: absolute;
-  left: 0;
 `;
 
 export const Container = styled.section`
@@ -33,17 +42,20 @@ export const Container = styled.section`
   }
 `;
 
-export const ConatinerSection = styled.div`
+export const ConatinerSection = styled.div<ConatinerSectionProps>`
   display: flex;
+  flex-direction: ${(p) => p.flexDirection === "collum" && "column"};
   justify-content: space-between;
   align-items: center;
   gap: 16px;
   height: calc(100vh - 96px);
 
   @media (max-width: 768px) {
-    flex-direction: column;
+    height: 100%;
     align-items: center;
     gap: 32px;
+    flex-direction: ${(p) =>
+      p.flexDirection === "column-reverse" ? "column-reverse" : "column"};
   }
 `;
 
@@ -75,7 +87,7 @@ export const Image = styled.img`
   }
 
   @media (max-width: 768px) {
-    display: none;
+    width: 100%;
   }
 `;
 
@@ -85,8 +97,10 @@ export const ContainerCards = styled.div`
   align-items: center;
   justify-content: center;
   gap: 64px;
-  padding: 16px;
+  margin: 64px 16px 0 16px;
+  border-radius: 16px;
   background: rgba(27, 27, 31, 0.9);
+
   h2 {
     width: 100%;
     text-align: center;

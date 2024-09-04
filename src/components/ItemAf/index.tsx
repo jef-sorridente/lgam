@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useSpring, useTransition } from "@react-spring/web";
+import { useTransition } from "@react-spring/web";
 import * as S from "./styles";
 
 import { Filiados } from "./affiliates";

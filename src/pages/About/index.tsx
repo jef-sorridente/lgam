@@ -1,5 +1,5 @@
 import image from "../../assets/images/img.png";
-import imgSobre from "../../assets/images/imgSobre.png";
+import imgSobre from "../../assets/images/imgSobre.webp";
 import CardVal from "../../components/CardVal";
 
 import Text from "../../components/Text";
@@ -17,7 +17,7 @@ import { useInView } from "react-intersection-observer";
 const About = () => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    delay: 800,
+    delay: 500,
     threshold: 0.5,
   });
 
@@ -57,7 +57,7 @@ const About = () => {
 
           <S.Image src={imgSobre} alt="" />
         </S.ConatinerSection>
-        <S.ConatinerSection>
+        <S.ConatinerSection flexDirection="column-reverse">
           <S.Image src={image} alt="" />
           <S.ContainerTexts>
             <Title>Nossa missão e Visão</Title>
@@ -79,7 +79,7 @@ const About = () => {
             </Text>
           </S.ContainerTexts>
         </S.ConatinerSection>
-        <S.ConatinerSection ref={ref}>
+        <S.ConatinerSection ref={ref} flexDirection="collum">
           {inView && (
             <S.ContainerAnimation>
               <S.AnimationCircle
