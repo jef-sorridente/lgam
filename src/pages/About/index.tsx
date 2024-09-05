@@ -6,31 +6,17 @@ import Text from "../../components/Text";
 import Title from "../../components/Title";
 import * as S from "./styles";
 
-import lines from "../../assets/animation/lines.json";
-import circle from "../../assets/animation/circle.json";
-
 import { Valores } from "./val";
 
 import { RiInstagramFill, RiFacebookCircleFill } from "react-icons/ri";
-import { useInView } from "react-intersection-observer";
+import EffectLines from "../../components/Effects/EffectLines";
+import EffectCircle from "../../components/Effects/EffectCircles";
 
 const About = () => {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    delay: 500,
-    threshold: 0.5,
-  });
-
   return (
     <>
       <S.Container>
-        <S.ContainerAnimation>
-          <S.AnimationLines
-            animationData={lines}
-            loop={false}
-            autoplay={true}
-          />
-        </S.ContainerAnimation>
+        <EffectLines />
         <S.ConatinerSection>
           <S.ContainerTexts>
             <Title>Quem somos?</Title>
@@ -79,17 +65,8 @@ const About = () => {
             </Text>
           </S.ContainerTexts>
         </S.ConatinerSection>
-        <S.ConatinerSection ref={ref} flexDirection="collum">
-          {inView && (
-            <S.ContainerAnimation>
-              <S.AnimationCircle
-                animationData={circle}
-                loop={false}
-                autoplay={true}
-              />
-            </S.ContainerAnimation>
-          )}
-
+        <S.ConatinerSection flexDirection="collum">
+          <EffectCircle />
           <S.ContainerCards>
             <Title>Valores</Title>
             {Valores &&

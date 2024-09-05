@@ -22,13 +22,9 @@ export const ContainerCard = styled.div`
   flex-wrap: wrap;
   justify-content: start;
   animation: anim-opacity 2s ease both;
-  gap: 2%;
+  gap: 1%;
 
   @media (max-width: 768px) {
-    gap: 2%;
-  }
-
-  @media (max-width: 425px) {
     width: 100%;
   }
 `;

@@ -35,6 +35,7 @@ export const AnimationCircle = styled(Animation)`
 export const Container = styled.section`
   display: flex;
   flex-direction: column;
+  animation: anim-opacity 1s ease both;
 
   @media (max-width: 768px) {
     padding: 100px 0;
@@ -65,9 +66,7 @@ export const ContainerTexts = styled.div`
   width: 50%;
   gap: 16px;
   padding: 16px;
-
   position: relative;
-  animation: anim-opacity 1s ease both;
   background: rgba(27, 27, 31, 0.9);
   border-radius: 16px;
 
@@ -78,7 +77,7 @@ export const ContainerTexts = styled.div`
 
 export const Image = styled.img`
   width: 50%;
-  animation: anim-opacity 2s ease both;
+
   border-end-start-radius: 25%;
   border-end-end-radius: 40%;
 
