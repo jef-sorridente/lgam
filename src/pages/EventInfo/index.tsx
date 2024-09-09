@@ -6,7 +6,7 @@ import * as S from "./styles";
 import EffectLines from "../../components/Effects/EffectLines";
 
 const EventosInfo = () => (
-  <S.Container>
+  <S.Container className="container">
     <EffectLines />
     <S.ConatinerSection>
       <Title>Eventos</Title>

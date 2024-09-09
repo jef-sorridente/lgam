@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 const StyleGlobal = createGlobalStyle`
 
@@ -32,17 +32,17 @@ const StyleGlobal = createGlobalStyle`
       opacity: 100%;
     }
   }
-  
-`;
 
-export const Container = styled.div`
+  .container {
   max-width: 1366px;
   width: 100%;
   margin: auto;
 
   @media (max-width: 1366px) {
-    padding: 0 5vw;
+    padding: 0 5vw !important; 
   }
+  }
+  
 `;
 
 export default StyleGlobal;

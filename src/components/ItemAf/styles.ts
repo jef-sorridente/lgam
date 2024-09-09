@@ -3,34 +3,45 @@ import variables from "../../styles/variables";
 import { animated } from "@react-spring/web";
 
 export const Container = styled.div`
-  border: 1px solid ${variables.bgColor2};
   border-radius: 16px;
   margin: 64px 0;
 `;
 
-const LineTableDefault = styled.ul`
+export const LineTableDefault = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 1fr) 10%;
   width: 100%;
   justify-content: space-between;
   padding: 16px;
+
+  li {
+    text-transform: capitalize;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 80% 20%;
+  }
 `;
 
 export const Header = styled(LineTableDefault)`
   border-radius: 16px 16px 0 0;
   background-color: ${variables.bgColor2};
+  font-weight: bold;
 `;
 
-export const HeaderItem = styled.li`
-  font-weight: 500;
-`;
+export const Body = styled.div`
+  :last-child {
+    border-radius: 0 0 16px 16px;
+  }
 
-export const ItemContainer = styled(LineTableDefault)`
-  border-bottom: 1px solid ${variables.bgColor2};
-  border-radius: 16px;
-`;
+  > ul:nth-child(odd) {
+    background-color: ${variables.bgColor1};
+  }
 
-export const Item = styled.li``;
+  > ul:nth-child(even) {
+    background-color: ${variables.bgColor2};
+  }
+`;
 
 export const Action = styled.li`
   margin-left: 30px;
@@ -42,8 +53,9 @@ export const ContainerInfos = styled(animated.div)`
   bottom: 0;
   left: 0;
   width: 100vw;
+  height: 200px;
 
-  background-color: ${variables.bgColor3};
+  background-color: ${variables.bgColor2};
   display: flex;
   justify-content: space-between;
   align-items: start;
@@ -65,11 +77,29 @@ export const Infos = styled.div`
     padding: 0 5vw;
   }
 
-  > span {
+  > svg {
+    font-size: 24px;
     position: absolute;
     right: 0;
-    top: 8;
+    top: 8px;
     cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+    padding: 120px 5vh 32px 5vh;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+
+    > svg {
+      font-size: 24px;
+      position: absolute;
+      right: 5vh;
+      top: 90px;
+      cursor: pointer;
+    }
   }
 `;
 
@@ -81,6 +111,15 @@ export const InfosRow = styled.div`
   h3 {
     font-size: 24px;
     grid-column: span 2;
+    @media (max-width: 768px) {
+      margin-bottom: 16px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 `;
 
@@ -94,6 +133,7 @@ export const InfosCollum = styled.div`
 
     h4 {
       margin-right: 8px;
+      margin-bottom: 2px;
     }
   }
 `;
@@ -102,4 +142,9 @@ export const Img = styled.img`
   width: 168px;
   height: 168px;
   object-fit: cover;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 90%;
+  }
 `;

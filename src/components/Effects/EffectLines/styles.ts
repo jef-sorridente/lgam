@@ -3,16 +3,17 @@ import styled from "styled-components";
 
 export const ContainerAnimation = styled.div`
   position: absolute;
-  right: 0;
   left: 0;
+  right: 0;
   top: 10vh;
+  z-index: -2;
 
   @media (max-width: 768px) {
     top: 50vh;
   }
 
   @media (max-width: 425px) {
-    top: 80vh;
+    top: 60vh;
   }
 `;
 

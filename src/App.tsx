@@ -1,16 +1,18 @@
 import Navbar from "./components/Navbar";
-import StyleGlobal, { Container } from "./styles";
+import StyleGlobal from "./styles";
 import { BrowserRouter } from "react-router-dom";
 import Rotas from "./routes";
+import Footer from "./pages/Footer";
 
 function App() {
   return (
     <BrowserRouter>
       <StyleGlobal />
       <Navbar />
-      <Container>
-        <Rotas />
-      </Container>
+
+      <Rotas />
+
+      <Footer />
     </BrowserRouter>
   );
 }

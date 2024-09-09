@@ -5,7 +5,6 @@ import circle from "../../../assets/animation/circle.json";
 const EffectCircle = () => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    delay: 1000,
     threshold: 0.5,
   });
 

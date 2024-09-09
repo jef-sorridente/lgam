@@ -2,16 +2,18 @@ import { useEffect, useState } from "react";
 import { useTransition } from "@react-spring/web";
 import * as S from "./styles";
 
+import { IoIosCloseCircle, IoIosAddCircle } from "react-icons/io";
+
 import { Filiados } from "./affiliates";
 
 type Filiado = {
   id: number;
   nome: string;
-  academia: string;
+  academia: string | null;
   faixa: string;
   nascimento: string;
-  localidade: string;
-  mestre: string;
+  localidade: string | null;
+  mestre: string | null;
   registroLGAM: number | null;
   registroLN: number | null;
   foto: string;
@@ -19,11 +21,15 @@ type Filiado = {
 
 const ItemAf = () => {
   const [selectedItem, setSelectedItem] = useState<Filiado | null>(null);
-  const [windowSize, setWindowSize] = useState<number>(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+  const [windowHeight, setWindowHeight] = useState<number>(window.innerHeight);
+  // const [sorted, setSorted] = useState(true);
+  const isMobile = windowWidth <= 768;
+  console.log(windowHeight);
 
   const transition = useTransition(selectedItem, {
     from: { height: 0 },
-    enter: { height: 200 },
+    enter: { height: isMobile ? windowHeight : 200 },
     leave: { height: 0 },
   });
 
@@ -32,32 +38,69 @@ const ItemAf = () => {
   // });
 
   useEffect(() => {
-    const handleResize = () => setWindowSize(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    const handleResizeW = () => setWindowWidth(window.innerWidth);
+    const handleResizeH = () => setWindowHeight(window.innerHeight);
+    window.addEventListener("resize", handleResizeW);
+    window.addEventListener("resize", handleResizeH);
+    return () => {
+      window.removeEventListener("resize", handleResizeW);
+      window.removeEventListener("resize", handleResizeH);
+    };
   }, []);
 
-  const isMobile = windowSize <= 768;
+  const sortedFiliados = [...Filiados].sort((a, b) =>
+    // sorted ? a.nome.localeCompare(b.nome) : b.nome.localeCompare(a.nome)
+    a.nome.localeCompare(b.nome)
+  );
+
+  // const handleSorted = () => {
+  //   setSorted(!sorted);
+  // };
 
   return (
     <>
       <S.Container>
         <S.Header>
-          <S.HeaderItem>Nome</S.HeaderItem>
-          <S.HeaderItem>Academia</S.HeaderItem>
-          <S.HeaderItem>Dan</S.HeaderItem>
-          <S.HeaderItem>Data de Nascimento</S.HeaderItem>
-          <S.HeaderItem>Detalhes</S.HeaderItem>
+          {isMobile ? (
+            <>
+              <li>Nome</li>
+              <li>Detalhes</li>
+            </>
+          ) : (
+            <>
+              <li>Nome</li>
+              <li>Academia</li>
+              <li>Dan</li>
+              <li>Data de Nascimento</li>
+              <li>Detalhes</li>
+            </>
+          )}
         </S.Header>
-        {Filiados.map((filiado) => (
-          <S.ItemContainer key={filiado.id}>
-            <S.Item>{filiado.nome}</S.Item>
-            <S.Item>{filiado.academia}</S.Item>
-            <S.Item>{filiado.faixa}</S.Item>
-            <S.Item>{filiado.nascimento}</S.Item>
-            <S.Action onClick={() => setSelectedItem(filiado)}>+</S.Action>
-          </S.ItemContainer>
-        ))}
+        <S.Body>
+          {sortedFiliados.map((filiado) => (
+            <S.LineTableDefault key={filiado.id}>
+              {isMobile ? (
+                <>
+                  <li>{filiado.nome}</li>
+
+                  <S.Action onClick={() => setSelectedItem(filiado)}>
+                    <IoIosAddCircle />
+                  </S.Action>
+                </>
+              ) : (
+                <>
+                  <li>{filiado.nome}</li>
+                  <li>{filiado.academia}</li>
+                  <li>{filiado.faixa}</li>
+                  <li>{filiado.nascimento}</li>
+                  <S.Action onClick={() => setSelectedItem(filiado)}>
+                    <IoIosAddCircle />
+                  </S.Action>
+                </>
+              )}
+            </S.LineTableDefault>
+          ))}
+        </S.Body>
       </S.Container>
 
       {transition(
@@ -102,13 +145,12 @@ const ItemAf = () => {
                     </div>
                   </S.InfosCollum>
                 </S.InfosRow>
-                <span onClick={() => setSelectedItem(null)}>X</span>
+
+                <IoIosCloseCircle onClick={() => setSelectedItem(null)} />
               </S.Infos>
             </S.ContainerInfos>
           )
       )}
-
-      {isMobile && <p>Mobile</p>}
     </>
   );
 };

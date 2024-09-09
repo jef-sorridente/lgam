@@ -120,3 +120,7 @@ export const Icons = styled.span`
     color: ${variables.txtColor3};
   }
 `;
+
+export const ContainerEffects = styled.div`
+  position: relative;
+`;

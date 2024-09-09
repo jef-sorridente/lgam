@@ -105,22 +105,24 @@ export const Background = styled.div`
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.9);
-  z-index: 1;
   cursor: pointer;
 `;
 
 export const CardFullSize = styled(animated.div)`
   padding: 32px;
   margin-top: 96px;
-
   border-radius: 16px;
   background-color: ${variables.bgColor2};
-  position: relative;
+
   top: 0;
   left: 0;
   z-index: 1;
 
   @media (max-width: 768px) {
+    overflow-y: scroll;
+  }
+
+  @media (max-height: 850px) {
     overflow-y: scroll;
   }
 `;

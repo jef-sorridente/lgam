@@ -29,11 +29,11 @@ const MainList = ({ onItemClick }: Props) => {
           Filiados
         </NavLink>
       </S.ItemList>
-      <S.ItemList>
+      {/* <S.ItemList>
         <NavLink to="#contato" onClick={onItemClick}>
           Contato
         </NavLink>
-      </S.ItemList>
+      </S.ItemList> */}
     </S.List>
   );
 };

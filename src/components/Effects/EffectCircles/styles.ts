@@ -4,7 +4,9 @@ import styled from "styled-components";
 export const ContainerAnimation = styled.div`
   position: absolute;
   left: 0;
-  bottom: 0;
+  right: 0;
+  bottom: -100px;
+  z-index: -2;
 
   @media (max-width: 768px) {
     bottom: 50vh;
@@ -15,7 +17,4 @@ export const ContainerAnimation = styled.div`
   }
 `;
 
-export const AnimationCircle = styled(Lottie)`
-  position: relative;
-  z-index: -2;
-`;
+export const AnimationCircle = styled(Lottie)``;
