@@ -1,9 +1,19 @@
 import styled from "styled-components";
+import variables from "../../styles/variables";
+import { Link } from "react-router-dom";
 
-export const Container = styled.div`
+export const Container = styled(Link)`
   display: flex;
   align-items: center;
   gap: 16px;
+
+  color: ${variables.txtColor1};
+  transition: 0.5s;
+
+  :hover {
+    color: ${variables.txtColor3};
+    transition: 0.5s;
+  }
 `;
 
 export const Image = styled.img`

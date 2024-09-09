@@ -1,4 +1,3 @@
-import CardPhotos from "../../components/CardPhotos/CardPhotos";
 import Text from "../../components/Text";
 import Title from "../../components/Title";
 import * as S from "./styles";
@@ -10,12 +9,7 @@ const Galery = () => (
       <Text>Fique por dentro dos nosso eventos, seminários e cursos!</Text>
     </div>
     <S.ContainerCards>
-      <CardPhotos />
-      <CardPhotos />
-      <CardPhotos />
-      <CardPhotos />
-      <CardPhotos />
-      <CardPhotos />
+      <Title>Em breve fotos de eventos</Title>
     </S.ContainerCards>
   </S.Container>
 );

@@ -2,15 +2,19 @@ import Text from "../../components/Text";
 import Title from "../../components/Title";
 import ItemAf from "../../components/ItemAf";
 
+import { Container } from "./styles";
+
 const Affiliates = () => {
   return (
-    <div>
-      <Title>Filiados</Title>
-      <Text>Filiados da Liga</Text>
+    <Container>
+      <div>
+        <Title>Filiados</Title>
+        <Text>Filiados da Liga</Text>
+      </div>
       <div>
         <ItemAf />
       </div>
-    </div>
+    </Container>
   );
 };
 

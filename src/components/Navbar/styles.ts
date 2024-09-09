@@ -14,12 +14,14 @@ export const Header = styled.header`
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: rgba(27, 27, 31, 0.1);
+    background: rgba(27, 27, 31, 0.3);
     backdrop-filter: blur(5px);
   }
   @media (max-width: 768px) {
     ::before {
+      content: "";
       background: rgba(27, 27, 31, 0.3);
+      backdrop-filter: blur(5px);
     }
   }
 `;

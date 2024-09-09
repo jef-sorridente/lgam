@@ -10,17 +10,11 @@ const EffectCircle = () => {
   });
 
   return (
-    <div ref={ref}>
+    <ContainerAnimation ref={ref}>
       {inView && (
-        <ContainerAnimation>
-          <AnimationCircle
-            animationData={circle}
-            loop={false}
-            autoplay={true}
-          />
-        </ContainerAnimation>
+        <AnimationCircle animationData={circle} loop={false} autoplay={true} />
       )}
-    </div>
+    </ContainerAnimation>
   );
 };
 

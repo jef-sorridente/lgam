@@ -36,6 +36,7 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
   animation: anim-opacity 1s ease both;
+  gap: 200px;
 
   @media (max-width: 768px) {
     padding: 100px 0;
@@ -49,7 +50,8 @@ export const ConatinerSection = styled.div<ConatinerSectionProps>`
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  height: calc(100vh - 96px);
+  height: 100%;
+  position: relative;
 
   @media (max-width: 768px) {
     height: 100%;

@@ -1,9 +1,9 @@
 import lines from "../../../assets/animation/lines.json";
-import { AnimationLines, ContainerAnimation } from "./styles";
+import { Animation, ContainerAnimation } from "./styles";
 
 const EffectLines = () => (
   <ContainerAnimation>
-    <AnimationLines animationData={lines} loop={false} autoplay={true} />
+    <Animation animationData={lines} loop={false} autoplay={true} />
   </ContainerAnimation>
 );
 

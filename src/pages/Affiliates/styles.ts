@@ -5,19 +5,11 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
   gap: 100px;
-  height: calc(100vh);
+  height: 100vh;
   animation: anim-opacity 1s ease both;
 
   @media (max-width: 768px) {
     padding: 100px 0;
     gap: 100px;
   }
-`;
-
-export const ContainerCards = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.5%;
 `;
