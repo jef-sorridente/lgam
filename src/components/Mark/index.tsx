@@ -3,8 +3,9 @@ import * as S from "./styles";
 
 const Mark = () => (
   <S.Container to={"/"}>
-    <S.Image src={icon} alt="LGAM" />
-    <S.Title>Liga Gaúcha de Artes Marciais</S.Title>
+    <S.Title>
+      <S.Image src={icon} alt="LGAM" />
+    </S.Title>
   </S.Container>
 );
 

@@ -17,11 +17,11 @@ export const Container = styled(Link)`
 `;
 
 export const Image = styled.img`
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
 
   @media (max-width: 768px) {
-    max-width: 60px;
+    max-width: 80px;
   }
 `;
 

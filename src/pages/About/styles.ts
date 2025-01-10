@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import Lottie from "lottie-react";
-import variables from "../../styles/variables";
+import colors from "../../styles/variables";
 
 type ConatinerSectionProps = {
   flexDirection?: "collum" | "column-reverse";
@@ -56,7 +56,7 @@ export const ConatinerSection = styled.div<ConatinerSectionProps>`
   @media (max-width: 768px) {
     height: 100%;
     align-items: center;
-    gap: 32px;
+    gap: 16px;
     flex-direction: ${(p) =>
       p.flexDirection === "column-reverse" ? "column-reverse" : "column"};
   }
@@ -66,11 +66,45 @@ export const ContainerTexts = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
-  gap: 16px;
+  gap: 8px;
   padding: 16px;
   position: relative;
-  background: rgba(27, 27, 31, 0.9);
   border-radius: 16px;
+
+  h2 {
+    color: ${colors.white};
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
+
+  button {
+    width: fit-content;
+    font-size: 18px;
+    padding: 16px 32px;
+    background-image: linear-gradient(
+      to right,
+      ${colors.red_1},
+      ${colors.red_2}
+    );
+    transition: all 0.3s;
+
+    margin-top: 8px;
+    color: ${colors.white};
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(1.2);
+    }
+
+    @media (max-width: 1024px) {
+      width: 100%;
+    }
+  }
 
   @media (max-width: 1024px) {
     width: 100%;
@@ -78,17 +112,22 @@ export const ContainerTexts = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 50%;
+  max-width: 450px;
+  width: 100%;
 
   border-end-start-radius: 25%;
   border-end-end-radius: 40%;
 
-  @media (max-width: 1024px) {
-    max-width: 450px;
-  }
-
   @media (max-width: 768px) {
-    width: 100%;
+    display: none;
+  }
+`;
+
+export const ImageMobilde = styled(Image)`
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+    margin: 16px auto;
   }
 `;
 
@@ -100,27 +139,95 @@ export const ContainerCards = styled.div`
   gap: 64px;
   margin: 64px 16px 0 16px;
   border-radius: 16px;
-  background: rgba(27, 27, 31, 0.9);
 
   h2 {
     width: 100%;
     text-align: center;
+    color: ${colors.white} !important;
   }
 `;
 
 export const Icons = styled.span`
   font-size: 32px;
   a {
-    color: ${variables.txtColor1};
+    color: ${colors.txtColor1};
     transition: 0.5s;
   }
 
   a:hover {
     transition: 0.5s;
-    color: ${variables.txtColor3};
+    color: ${colors.txtColor3};
   }
 `;
 
-export const ContainerEffects = styled.div`
-  position: relative;
+export const QuemSomos = styled(ConatinerSection)`
+  background-color: ${colors.black};
+  padding: 100px 0;
+`;
+
+export const Missao = styled(ConatinerSection)`
+  padding: 100px 0;
+  h2,
+  p {
+    color: ${colors.black};
+  }
+`;
+
+export const Valores = styled(ConatinerSection)`
+  padding: 100px 0;
+  padding-bottom: 225px;
+  background-color: ${colors.black};
+  h2,
+  p {
+    color: ${colors.black};
+  }
+`;
+
+export const Novidades = styled(ConatinerSection)`
+  flex-direction: column;
+  padding-top: 125px !important;
+  padding-bottom: 100px !important;
+
+  @media (max-width: 768px) {
+    padding-top: 125px !important;
+    padding-bottom: 100px !important;
+  }
+  h2 {
+    color: ${colors.black} !important;
+  }
+
+  button {
+    width: fit-content;
+    font-size: 18px;
+    padding: 16px 32px;
+    background-image: linear-gradient(
+      to right,
+      ${colors.red_1},
+      ${colors.red_2}
+    );
+    transition: all 0.3s;
+
+    margin-top: 8px;
+    color: ${colors.white};
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(1.2);
+    }
+
+    @media (max-width: 768px) {
+      max-width: 250px;
+      width: 100%;
+    }
+  }
+`;
+
+export const ContainerNovidades = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 `;

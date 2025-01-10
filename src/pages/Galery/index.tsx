@@ -1,3 +1,4 @@
+import CardPhotos from "../../components/CardPhotos/CardPhotos";
 import EffectLines from "../../components/Effects/EffectLines";
 import Text from "../../components/Text";
 import Title from "../../components/Title";
@@ -11,7 +12,7 @@ const Galery = () => (
       <Text>Fique por dentro dos nosso eventos, seminários e cursos!</Text>
     </div>
     <S.ContainerCards>
-      <Title>Em breve fotos de eventos</Title>
+      <CardPhotos />
     </S.ContainerCards>
   </S.Container>
 );

@@ -17,7 +17,7 @@ export const Container = styled.section`
 export const ContainerCards = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   flex-wrap: wrap;
   gap: 0.5%;
 `;

@@ -1,20 +1,66 @@
 import Text from "../Text";
 import * as S from "./styles";
+import { Photos } from "./photos";
+import { useState } from "react";
 
-const CardPhotos = () => (
-  <S.Container>
-    <S.ContainerImg>
-      <S.Img
-        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikasYGlC5F6YYPC_dP8MkSkjv8UkwnbcxFB85bg3lTxgF6ND5dap_dTIlveto7rPJpZcEoM7e1aWffHeHiy-3l-Dzc5_xSB5T4lzKy_gZwJxanTVkgKsZimUWrKYfufE_e30WGU08SW0w/w640-h360-rw/images+%25282%2529.jpeg"
-        alt=""
-      />
-    </S.ContainerImg>
-    <S.ContainerText>
-      <Text secundarycolor={true}>
-        Torneio Beneficiente Mestre Chico Chagas
-      </Text>
-    </S.ContainerText>
-  </S.Container>
-);
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import "./styles.css";
+
+type Photo = {
+  id: number;
+  title?: string;
+  thamb?: string;
+  photos?: string[];
+};
+
+const CardPhotos = () => {
+  const [photoSelect, setPhotoSelect] = useState<Photo | null>(null);
+
+  return (
+    <>
+      {Photos.map((photo) => (
+        <S.Container onClick={() => setPhotoSelect(photo)}>
+          <S.ContainerImg key={photo.id}>
+            <S.Img src={photo.thamb} />
+          </S.ContainerImg>
+
+          <S.ContainerText>
+            <Text secundarycolor={true}>{photo.title}</Text>
+          </S.ContainerText>
+        </S.Container>
+      ))}
+
+      {photoSelect && (
+        <div className="containerSwiper">
+          <S.ButtomClose onClick={() => setPhotoSelect(null)}>
+            Fechar
+          </S.ButtomClose>
+
+          <Swiper
+            pagination={{
+              type: "fraction",
+            }}
+            navigation={true}
+            modules={[Pagination, Navigation]}
+            className="mySwiper"
+          >
+            {photoSelect.photos?.map((p, i) => (
+              <SwiperSlide key={i}>
+                <S.Img src={p} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      )}
+    </>
+  );
+};
 
 export default CardPhotos;

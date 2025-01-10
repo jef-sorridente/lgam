@@ -3,19 +3,16 @@ import MainList from "../MainList";
 import Mark from "../Mark";
 import * as S from "./styles";
 
-import { FaBarsStaggered } from "react-icons/fa6";
-
-const Navbar = () => {
+const Header = () => {
   const [toggleButtom, setToggleButtom] = useState(false);
   const [windowSize, setWindowSize] = useState<number>(window.innerWidth);
+  const isMobile = windowSize <= 768;
 
   useEffect(() => {
     const handleResize = () => setWindowSize(window.innerWidth);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  const isMobile = windowSize <= 768;
 
   const handleClick = () => {
     setToggleButtom(!toggleButtom);
@@ -37,7 +34,7 @@ const Navbar = () => {
                 <S.IoCloseCustom fontSize={32} onClick={handleClick} />
               </>
             ) : (
-              <FaBarsStaggered fontSize={24} onClick={handleClick} />
+              <S.FaBarsStaggeredCustom fontSize={24} onClick={handleClick} />
             )}
           </>
         ) : (
@@ -50,4 +47,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;

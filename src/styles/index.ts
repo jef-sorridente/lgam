@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import colors from "./variables";
 
 const StyleGlobal = createGlobalStyle`
 
@@ -17,8 +18,8 @@ const StyleGlobal = createGlobalStyle`
     }
 
     body{
-      background-color: #1B1B1F;
-      color: #DFDFD6;      
+      background-color: ${colors.white};
+      color: #121212;      
       
     }
 
@@ -34,11 +35,11 @@ const StyleGlobal = createGlobalStyle`
   }
 
   .container {
-  max-width: 1366px;
+  max-width: 1200px;
   width: 100%;
   margin: auto;
 
-  @media (max-width: 1366px) {
+  @media (max-width: 1200px) {
     padding: 0 5vw !important; 
   }
   }

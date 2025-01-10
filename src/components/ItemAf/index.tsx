@@ -14,8 +14,8 @@ type Filiado = {
   nascimento: string;
   localidade: string | null;
   mestre: string | null;
-  registroLGAM: number | null;
-  registroLN: number | null;
+  registroLGAM: string | null;
+  registroLN: string | null;
   foto: string;
 };
 
