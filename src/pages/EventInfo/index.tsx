@@ -1,21 +1,28 @@
 import CardEvent from "../../components/CardEvent";
-import Text from "../../components/Text";
 import Title from "../../components/Title";
 import * as S from "./styles";
 
-import EffectLines from "../../components/Effects/EffectLines";
+import background from "../../assets/images/Home/background_3.webp";
 
 const EventosInfo = () => (
-  <S.Container className="container">
-    <EffectLines />
-    <S.ConatinerSection>
-      <Title>Eventos</Title>
-      <Text>Fique por dentro dos nosso eventos, seminários e cursos!</Text>
-    </S.ConatinerSection>
-    <S.ContainerCard>
-      <CardEvent />
-    </S.ContainerCard>
-  </S.Container>
+  <>
+    <S.ContainerImg>
+      <S.Img src={background} alt="background" />
+      <span></span>
+      <S.ConatinerSection>
+        <Title>Fique por dentro dos nosso</Title>
+        <Title>eventos oficias</Title>
+      </S.ConatinerSection>
+    </S.ContainerImg>
+
+    <S.Events>
+      <S.Container className="container">
+        <S.ContainerCard>
+          <CardEvent />
+        </S.ContainerCard>
+      </S.Container>
+    </S.Events>
+  </>
 );
 
 export default EventosInfo;

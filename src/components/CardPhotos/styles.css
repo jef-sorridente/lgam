@@ -6,6 +6,8 @@
   height: 100%;
   background-color: rgb(27, 27, 31, 0.9);
   padding: 3.25rem;
+
+  z-index: 1;
 }
 
 .swiper {

@@ -29,11 +29,15 @@ const CardPhotos = () => {
         <S.Container onClick={() => setPhotoSelect(photo)}>
           <S.ContainerImg key={photo.id}>
             <S.Img src={photo.thamb} />
+
+            <span></span>
           </S.ContainerImg>
 
           <S.ContainerText>
             <Text secundarycolor={true}>{photo.title}</Text>
           </S.ContainerText>
+
+          
         </S.Container>
       ))}
 

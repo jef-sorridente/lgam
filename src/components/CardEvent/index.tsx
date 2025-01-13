@@ -1,4 +1,3 @@
-import Text from "../Text";
 import * as S from "./styles";
 
 import { Events } from "./events";
@@ -12,6 +11,7 @@ type Events = {
   mes: string;
   ano: string;
   local: string;
+  thumbnail: string;
   foto: string;
   inicio: string;
   contato: string[];
@@ -33,22 +33,23 @@ const CardEvent = () => {
   return (
     <>
       {Events.map((evento) => (
-        <S.Card key={evento.id}>
+        <S.Card key={evento.id} onClick={() => setOpenCard(evento)}>
           <S.Header>
             <S.Title>{evento.titulo}</S.Title>
             <S.Date>
-              <S.Day>{evento.dia}</S.Day>
-              <S.Month>{evento.mes}</S.Month>
-              <S.Month>{evento.ano}</S.Month>
+              {evento.dia}/
+              {evento.mes}/
+              {evento.ano}
             </S.Date>
           </S.Header>
           <S.Body>
-            <S.Img src={evento.foto} />
+            <S.Img src={evento.thumbnail} />
+            <span></span>
           </S.Body>
-          <S.Footer>
+          {/* <S.Footer>
             <Text secundarycolor={true}>{`Local: ${evento.local}`}</Text>
             <S.Buttom onClick={() => setOpenCard(evento)}>Detalhes</S.Buttom>
-          </S.Footer>
+          </S.Footer> */}
         </S.Card>
       ))}
       {transition(
@@ -60,9 +61,11 @@ const CardEvent = () => {
                 <S.CardFullSizeHeader>
                   <S.CardFullTitle>{item.titulo}</S.CardFullTitle>
                   <S.Date>
-                    <S.Day>{item.dia}</S.Day>
-                    <S.Month>{item.mes}</S.Month>
-                    <S.Month>{item.ano}</S.Month>
+                    <p>
+                      {item.dia} /
+                      {item.mes} /
+                      {item.ano}
+                    </p>
                   </S.Date>
                 </S.CardFullSizeHeader>
                 <S.CardFullBody>

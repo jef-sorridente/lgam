@@ -49,7 +49,7 @@ export const SwiperSlideCustom = styled(SwiperSlide)`
 
 export const Text = styled.div`
   position: absolute;
-  top: 0;
+  top: 32px;
   left: 0;
   right: 0;
   z-index: 1;
@@ -65,12 +65,14 @@ export const Text = styled.div`
   justify-content: center;
 
   h2 {
-    font-size: 64px;
+    max-width: 800px;
+    width: 100%;
+    font-size: 40px;
     font-weight: bold;
     text-transform: uppercase;
 
     @media (max-width: 768px) {
-      font-size: 42px;
+      font-size: 32px;
     }
   }
 

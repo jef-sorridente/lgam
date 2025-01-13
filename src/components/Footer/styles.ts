@@ -7,6 +7,8 @@ export const FooterContainer = styled.footer`
 
   background: ${colors.black};
   color: ${colors.white};
+
+  border-top: 1px solid ${colors.white};
 `;
 
 export const FooterTop = styled.div`

@@ -1,20 +1,27 @@
 import CardPhotos from "../../components/CardPhotos/CardPhotos";
-import EffectLines from "../../components/Effects/EffectLines";
-import Text from "../../components/Text";
 import Title from "../../components/Title";
 import * as S from "./styles";
 
+import background from "../../assets/images/Gallery/background.webp";
+
 const Galery = () => (
-  <S.Container className="container">
-    <EffectLines />
-    <div>
-      <Title>Galeria de fotos</Title>
-      <Text>Fique por dentro dos nosso eventos, seminários e cursos!</Text>
-    </div>
-    <S.ContainerCards>
-      <CardPhotos />
-    </S.ContainerCards>
-  </S.Container>
+  <>
+    <S.ContainerImg>
+      <S.Img src={background} alt="background" />
+      <span></span>
+      <S.ConatinerSection>
+        <Title>Galeria de fotos</Title>
+      </S.ConatinerSection>
+    </S.ContainerImg>
+
+    <S.Gallery>
+      <S.Container className="container">
+        <S.ContainerCard>
+          <CardPhotos />
+        </S.ContainerCard>
+      </S.Container>
+    </S.Gallery>
+  </>
 );
 
 export default Galery;

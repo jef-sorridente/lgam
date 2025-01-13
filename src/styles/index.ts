@@ -37,6 +37,7 @@ const StyleGlobal = createGlobalStyle`
   .container {
   max-width: 1200px;
   width: 100%;
+  height: 100%;
   margin: auto;
 
   @media (max-width: 1200px) {

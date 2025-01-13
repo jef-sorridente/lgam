@@ -2,15 +2,21 @@ import styled from "styled-components";
 import variables from "../../styles/variables";
 
 export const Container = styled.div`
-  width: 49.75%;
-  max-height: 450px;
+  position: relative;
   display: flex;
   flex-direction: column;
-  margin-bottom: 8px;
-  border-radius: 8px;
-  overflow: hidden;
-  background-color: #202127;
+  height: 400px;
+  width: 400px;
+
   cursor: pointer;
+
+  &:hover span {
+    opacity: 0.4;
+  }
+
+  @media (max-width: 1024px) {
+    width: 49%;
+  }
 
   @media (max-width: 768px) {
     width: 100%;
@@ -21,16 +27,31 @@ export const ContainerText = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px;
-  height: 10%;
+  padding: 16px;
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 `;
 
 export const ContainerImg = styled.div`
   overflow: hidden;
-  :hover {
-    transform: scale(1.05);
-    transition: 0.5s ease;
+
+  span {
+    width: 100%;
+    height: 100%;
+    background-color: #1d1d1d;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transition: all .5s ease;
   }
+
 `;
 
 export const Img = styled.img`

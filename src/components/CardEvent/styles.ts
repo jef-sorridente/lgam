@@ -3,13 +3,18 @@ import variables from "../../styles/variables";
 import { animated } from "@react-spring/web";
 
 export const Card = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
-  width: 32.66%;
-  background-color: ${variables.bgColor2};
-  padding: 16px;
-  border-radius: 16px;
-  margin-bottom: 27px;
+  height: 400px;
+  width: 400px;
+  padding: 32px;
+
+  cursor: pointer;
+
+  &:hover span{
+    opacity: 0.4;
+  }
 
   @media (max-width: 1024px) {
     width: 49%;
@@ -22,39 +27,36 @@ export const Card = styled.div`
 
 export const Header = styled.header`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   gap: 16px;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 8px;
+
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+
+  text-align: center;
 `;
 
 export const Title = styled.h3`
   width: 100%;
-  padding: 16px 0;
   color: #fff;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
 `;
 
 export const Date = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 70px;
-  padding: 2px;
-  border-radius: 16px;
-  background-color: ${variables.txtColor3};
-  color: ${variables.bgColor1};
-`;
 
-export const Day = styled.h3`
-  font-size: 24px;
-`;
-
-export const Month = styled.p`
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: 500;
+  color: ${variables.white};
 `;
 
 export const Body = styled.main`
@@ -62,10 +64,27 @@ export const Body = styled.main`
   max-height: 200px;
   overflow: hidden;
   border-radius: 8px;
+
+  span {
+    width: 100%;
+    height: 100%;
+    background-color: #1d1d1d;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transition: all .5s ease;
+  }
 `;
 
 export const Img = styled.img`
   width: 100%;
+  object-fit: cover;
+
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
 export const Footer = styled.footer`
@@ -87,6 +106,7 @@ export const Buttom = styled.button`
 `;
 
 export const ContainerCardFull = styled.div`
+  z-index: 11;
   position: fixed;
   top: 0;
   left: 0;
