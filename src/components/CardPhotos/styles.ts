@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import variables from "../../styles/variables";
+import colors from "../../styles/variables";
 
 export const Container = styled.div`
   position: relative;
@@ -27,7 +28,6 @@ export const ContainerText = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
   width: 100%;
   height: 100%;
 
@@ -36,6 +36,16 @@ export const ContainerText = styled.div`
   left: 0;
   z-index: 1;
 `;
+
+export const Title = styled.h3`
+  width: 100%;
+  color: ${colors.white};
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  text-align: center;
+`
 
 export const ContainerImg = styled.div`
   overflow: hidden;

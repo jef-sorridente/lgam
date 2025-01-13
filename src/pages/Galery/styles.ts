@@ -54,6 +54,7 @@ export const ContainerCard = styled.div`
 export const ContainerImg = styled.div`
   height: 80vh;
   position: relative;
+  overflow: hidden;
 
   span {
     position: absolute;
@@ -68,6 +69,7 @@ export const ContainerImg = styled.div`
 
 export const Img = styled.img`
   width: 100%;
-  max-height: 80vh;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
 `;

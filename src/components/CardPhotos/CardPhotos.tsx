@@ -1,4 +1,3 @@
-import Text from "../Text";
 import * as S from "./styles";
 import { Photos } from "./photos";
 import { useState } from "react";
@@ -12,6 +11,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import "./styles.css";
+import Title from "../Title";
 
 type Photo = {
   id: number;
@@ -34,7 +34,7 @@ const CardPhotos = () => {
           </S.ContainerImg>
 
           <S.ContainerText>
-            <Text secundarycolor={true}>{photo.title}</Text>
+            <S.Title>{photo.title}</S.Title>
           </S.ContainerText>
 
           

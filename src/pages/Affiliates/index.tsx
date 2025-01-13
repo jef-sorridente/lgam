@@ -1,22 +1,28 @@
-import Text from "../../components/Text";
 import Title from "../../components/Title";
 import ItemAf from "../../components/ItemAf";
+import background from "../../assets/images/Affiliates/background.webp"
 
-import { Container } from "./styles";
-import EffectLines from "../../components/Effects/EffectLines";
+import * as S from "./styles";
 
 const Affiliates = () => {
   return (
-    <Container className="container">
-      <EffectLines />
-      <div>
-        <Title>Filiados</Title>
-        <Text>Filiados da Liga</Text>
-      </div>
-      <div>
-        <ItemAf />
-      </div>
-    </Container>
+    <>
+      <S.ContainerImg>
+        <S.Img src={background} alt="background" />
+        <span></span>
+        <S.ConatinerSection>
+          <Title>Filiados</Title>
+        </S.ConatinerSection>
+      </S.ContainerImg>
+
+      <S.Gallery>
+        <S.Container className="container">
+          <S.ContainerAffiliates>
+            <ItemAf />
+          </S.ContainerAffiliates>
+        </S.Container>
+      </S.Gallery>
+    </>
   );
 };
 

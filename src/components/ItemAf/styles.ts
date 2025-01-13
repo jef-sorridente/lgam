@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import variables from "../../styles/variables";
 import { animated } from "@react-spring/web";
+import colors from "../../styles/variables";
 
-export const Container = styled.div`
-  border-radius: 16px;
-  margin: 64px 0;
-`;
+// export const Container = styled.div`
+//   border-radius: 16px;
+//   margin: 64px 0;
+// `;
 
 export const LineTableDefault = styled.ul`
   display: grid;
@@ -148,3 +149,93 @@ export const Img = styled.img`
     height: 90%;
   }
 `;
+
+// Atualização
+
+export const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+`;
+
+export const InfosEsquerda = styled.div`
+  width: 350px;
+  height: 350px;
+  color: ${colors.white};
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+`;
+
+export const Title = styled.h3`
+  font-size: 24px;
+`;
+
+export const CardFiliar = styled.div`
+  background-color: ${colors.white};
+  color: ${colors.black};
+
+  padding: 32px;
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
+export const Button = styled.button`
+  background-image: linear-gradient(to left, ${colors.red_1}, ${colors.red_2});
+  color: ${colors.white};
+  padding: 16px;
+
+  font-size: 22px;
+  font-weight: 600;
+
+  border-radius: 16px;
+  border: none;
+
+  box-shadow: -5px 5px 5px rgb(0, 0, 0, 0.25);
+  
+  transition: all ease 0.5s;
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+
+  cursor: pointer;
+`;
+
+export const ContainerCidades = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 8px;
+  width: 608px;
+`;
+
+export const Cidades = styled.div`
+  background-color: ${colors.white};
+  padding: 16px 32px;
+  border-radius: 8px;
+  width: calc(50% - 16px);
+  height: min-content;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: all ease 0.5s;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+`;
+
+export const ContainerEquipes = styled.div`
+  color: ${colors.white};
+`
+
+export const Equipe = styled.div`
+
+`
