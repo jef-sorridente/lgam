@@ -50,8 +50,6 @@ const CardPhotos = () => {
     setThumbsSwiper(null);
   };
 
-  console.log(swiperOpen);
-
   return (
     <>
       {Photos.map((photo) => (

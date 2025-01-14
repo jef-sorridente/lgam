@@ -47,11 +47,10 @@ export const ContainerCard = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
-  /* animation: anim-opacity 2s ease both; */
 
   @media (max-width: 768px) {
     width: 100%;
-    gap: 16px;
+    gap: 32px;
   }
 `;
 

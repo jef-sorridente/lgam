@@ -147,8 +147,10 @@ const ItemAf = () => {
                           <ul className="lista-header">
                             <li></li>
                             <li>Nome</li>
-                            <li>Graduação</li>
-                            <li>Data de Nascimento</li>
+                            <li className="d-mobile-none">Graduação</li>
+                            <li className="d-mobile-none">
+                              Data de Nascimento
+                            </li>
                           </ul>
 
                           {equipe.alunos_filiados.map((aluno) => (
@@ -168,11 +170,11 @@ const ItemAf = () => {
                                   <p>{aluno.nome_aluno}</p>
                                   <p>@instagram</p>
                                 </li>
-                                <li className="list-item social">
-                                  <p>Professor/Atleta</p>
+                                <li className="list-item social d-mobile-none">
+                                  <p>Professor / Atleta</p>
                                   <p>{aluno.graduacao}</p>
                                 </li>
-                                <li className="list-item">
+                                <li className="list-item d-mobile-none">
                                   {aluno.data_nascimento}
                                 </li>
                                 <li
@@ -191,6 +193,15 @@ const ItemAf = () => {
                                     <li className="detalhes-item">
                                       <p>Nº registro Liga Nacional: </p>
                                       <p>{aluno.n_liga_nacional}</p>
+                                    </li>
+
+                                    <li className="detalhes-item">
+                                      <p>Graduação: </p>
+                                      <p>{aluno.graduacao} Professor / Atleta</p>
+                                    </li>
+                                    <li className="detalhes-item">
+                                      <p> Data de Nascimento: </p>
+                                      <p>{aluno.data_nascimento}</p>
                                     </li>
                                   </ul>
                                 )}

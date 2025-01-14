@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import variables from "../../styles/variables";
 import { animated } from "@react-spring/web";
+import colors from "../../styles/variables";
 
 export const Card = styled.div`
   position: relative;
@@ -21,7 +22,7 @@ export const Card = styled.div`
 
   @media (max-width: 768px) {
     justify-content: center;
-  } 
+  }
 `;
 
 export const Header = styled.header`
@@ -49,13 +50,9 @@ export const Title = styled.h3`
 `;
 
 export const Date = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
-  color: ${variables.white};
+  color: ${colors.white};
 `;
 
 export const Body = styled.main`
@@ -94,12 +91,11 @@ export const Footer = styled.footer`
 `;
 
 export const Buttom = styled.button`
-  width: 100%;
   padding: 6px;
   font-weight: bold;
   border: none;
   border-radius: 8px;
-  color: ${variables.bgColor1};
+  color: ${colors.white};
   background-color: ${variables.txtColor3};
   cursor: pointer;
 `;
@@ -111,37 +107,23 @@ export const ContainerCardFull = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 32px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`;
 
-export const Background = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  cursor: pointer;
+  background-color: ${colors.black};
 `;
 
 export const CardFullSize = styled(animated.div)`
+  max-width: 1000px;
+  width: 100%;
+  height: 100%;
+  position: relative;
   padding: 32px;
-  margin-top: 96px;
-  border-radius: 16px;
-  background-color: ${variables.bgColor2};
-
-  top: 0;
-  left: 0;
-  z-index: 1;
 
   @media (max-width: 768px) {
-    overflow-y: scroll;
-  }
-
-  @media (max-height: 850px) {
     overflow-y: scroll;
   }
 `;
@@ -149,14 +131,15 @@ export const CardFullSize = styled(animated.div)`
 export const CardFullSizeHeader = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  padding-right: 84px;
   margin-bottom: 16px;
 `;
 
 export const CardFullTitle = styled.h3`
   font-size: 28px;
-  color: ${variables.txtColor3};
+  text-transform: uppercase;
+  color: ${colors.white};
 `;
 
 export const CardFullBody = styled.div`
@@ -176,6 +159,11 @@ export const Infos = styled.div`
   width: 40%;
   height: 550px;
   position: relative;
+  color: ${colors.white};
+
+  h4 {
+    font-size: 18px;
+  }
 
   @media (max-width: 768px) {
     width: 100%;
@@ -184,7 +172,7 @@ export const Infos = styled.div`
     flex-wrap: wrap;
     height: 100%;
     column-gap: 2%;
-    row-gap: 16px;
+    row-gap: 10px;
 
     div {
       width: 49%;
@@ -199,23 +187,41 @@ export const Infos = styled.div`
 `;
 
 export const ButtomClose = styled(Buttom)`
-  margin-top: 16px;
-  width: 100%;
-  position: absolute;
-  bottom: 0px;
+  font-size: 16px;
+  padding: 8px 16px;
+  background-color: #e9272e;
+  transition: all 0.3s;
+  color: #fbfbfb;
+  border: 2px solid #e9272e;
+  border-radius: 16px;
+  cursor: pointer;
 
-  @media (max-width: 768px) {
-    position: static;
+  height: fit-content;
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  svg {
+    rotate: 180deg;
+  }
+
+  @media (min-width: 768px) {
+    right: 32px;
   }
 `;
 
 export const CardFullImg = styled.img`
   max-height: 550px;
-  width: 100%;
+  /* width: 100%; */
 
   border-radius: 16px;
 
-  @media (max-width: 450px) {
+  @media (max-width: 768px) {
     width: 100%;
   }
 `;

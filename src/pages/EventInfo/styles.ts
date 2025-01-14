@@ -48,6 +48,8 @@ export const ContainerCard = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
+     justify-content: center;
+     gap: 32px;
   }
 `;
 

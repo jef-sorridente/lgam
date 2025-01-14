@@ -21,7 +21,7 @@ export const ContainerSlide = styled.div`
   transition: all ease-in 0.5s;
 
   &.active {
-    margin-left: -1000px;
+    margin-left: -100%;
   }
 
   .container-cidades {
@@ -39,25 +39,35 @@ export const ContainerCidades = styled.div`
   flex-wrap: wrap;
   align-content: flex-start;
   gap: 8px;
-  width: 650px;
+  width: 100%;
+  padding-left: 32px;
 
   @media (max-width: 768px) {
     flex-direction: column;
-    width: 650px;
+    padding-left: 0;
   }
 `;
 
 export const ContainerEquipes = styled.div`
-  width: 1000px;
-  margin-right: -1000px;
+  position: relative;
+  left: 0;
+  /* max-width: 1000px; */
+  width: 100%;
+  margin-right: -100%;
   color: ${colors.white};
   right: -100%;
 
   display: flex;
   justify-content: space-between;
-  
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
 
   .voltar {
+    position: absolute;
+    right: 0;
+
     font-size: 20px;
     padding: 16px;
     background-image: linear-gradient(to right, #e9272e, #c71c22);
@@ -68,6 +78,12 @@ export const ContainerEquipes = styled.div`
     cursor: pointer;
 
     height: fit-content;
+
+    @media (max-width: 768px) {
+      position: relative;
+      font-size: 16px;
+      margin-bottom: 5vw;
+    }
   }
 `;
 
@@ -80,6 +96,12 @@ export const InfosEsquerda = styled.div`
   flex-direction: column;
   justify-content: space-between;
   gap: 100px;
+
+  @media (max-width: 768px) {
+    height: fit-content;
+    gap: 32px;
+    width: 100%;
+  }
 `;
 
 export const CardFiliar = styled.div`
@@ -95,6 +117,11 @@ export const CardFiliar = styled.div`
   flex-direction: column;
   gap: 16px;
   width: 300px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 32px;
+  }
 
   &.right {
     position: absolute;
@@ -135,6 +162,7 @@ export const Cidades = styled.div`
   background-color: ${colors.white};
   padding: 16px 32px;
   border-radius: 8px;
+  max-width: 300px;
   width: calc(50% - 16px);
   height: min-content;
 
@@ -144,6 +172,11 @@ export const Cidades = styled.div`
 
   transition: all ease 0.5s;
 
+  @media (max-width: 768px) {
+    max-width: 100%;
+    width: 100%;
+  }
+
   &:hover {
     background-color: #f0f0f0;
   }
@@ -152,13 +185,13 @@ export const Cidades = styled.div`
 export const Equipe = styled.div`
   display: flex;
   flex-direction: column;
-  width: 700px;
+  width: 100%;
   gap: 64px;
 
   hr {
     border: none;
     border-bottom: 1px solid ${colors.red_1};
-    width: 1000px;
+    width: 100%;
   }
 `;
 
@@ -184,12 +217,16 @@ export const EquipeHeader = styled.div`
 `;
 
 export const ListaAlunos = styled.div`
-  width: 1000px;
+  width: 100%;
   background-color: ${colors.white};
   color: ${colors.black};
 
   border-radius: 16px;
   margin: 32px 0;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 
   .lista-header,
   .lista-body {
@@ -198,6 +235,10 @@ export const ListaAlunos = styled.div`
     grid-template-rows: auto;
     padding: 16px;
     border-bottom: 1px solid #dadada;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 20% 60% 20%;
+    }
 
     &:last-child {
       border: none;
@@ -225,6 +266,12 @@ export const ListaAlunos = styled.div`
         align-items: start;
         gap: 4px;
       }
+
+      &.d-mobile-none {
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
     }
   }
 
@@ -242,20 +289,34 @@ export const ListaAlunos = styled.div`
     &:hover {
       color: rgb(115, 115, 115);
     }
+
+    @media (max-width: 768px) {
+      align-items: start;
+      margin-top: 8px;
+    }
   }
 
   .detalhes-open {
     grid-column: 2 / span 4;
+
+    display: flex;
+    flex-direction: column;
     padding-top: 6px;
     display: flex;
     /* flex-direction: column; */
-    gap: 32px;
+    gap: 10px;
 
     .detalhes-item {
       display: flex;
       p {
         margin-right: 4px;
       }
+    }
+  }
+
+  .d-mobile-none {
+    @media (max-width: 768px) {
+      display: none;
     }
   }
 `;
@@ -268,6 +329,11 @@ export const FotosEquipe = styled.div`
   img {
     width: 250px;
     height: 250px;
+
+    @media (max-width: 768px) {
+      width: 150px;
+      height: 150px;
+    }
   }
 `;
 

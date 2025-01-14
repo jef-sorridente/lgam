@@ -1,7 +1,7 @@
 import * as S from "./styles";
 
 import { Events } from "./events";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTransition } from "@react-spring/web";
 
 type Events = {
@@ -22,6 +22,22 @@ type Events = {
 
 const CardEvent = () => {
   const [openCard, setOpenCard] = useState<Events | null>(null);
+  const [swiperOpen, setSwiperOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (swiperOpen) {
+      document.body.style.overflow = "hidden";
+      document.body.style.height = "100vh";
+    } else {
+      document.body.style.overflow = "";
+      document.body.style.height = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+      document.body.style.height = "";
+    };
+  }, [swiperOpen]);
 
   const transition = useTransition(openCard, {
     from: { opacity: 0 },
@@ -33,13 +49,17 @@ const CardEvent = () => {
   return (
     <>
       {Events.map((evento) => (
-        <S.Card key={evento.id} onClick={() => setOpenCard(evento)}>
+        <S.Card
+          key={evento.id}
+          onClick={() => {
+            setOpenCard(evento);
+            setSwiperOpen(true);
+          }}
+        >
           <S.Header>
             <S.Title>{evento.titulo}</S.Title>
             <S.Date>
-              {evento.dia}/
-              {evento.mes}/
-              {evento.ano}
+              {evento.dia}/{evento.mes}/{evento.ano}
             </S.Date>
           </S.Header>
           <S.Body>
@@ -56,24 +76,26 @@ const CardEvent = () => {
         (styles, item) =>
           item && (
             <S.ContainerCardFull>
-              <S.Background onClick={() => setOpenCard(null)} />
               <S.CardFullSize style={styles}>
                 <S.CardFullSizeHeader>
                   <S.CardFullTitle>{item.titulo}</S.CardFullTitle>
                   <S.Date>
                     <p>
-                      {item.dia} /
-                      {item.mes} /
-                      {item.ano}
+                      {item.dia}/{item.mes}/{item.ano}
                     </p>
                   </S.Date>
                 </S.CardFullSizeHeader>
+                {/* Header */}
+
                 <S.CardFullBody>
                   <S.CardFullImg src={item.foto} />
                   <S.Infos>
-                    <div>
-                      <h4>Organização:</h4> <p>{item.organizacao}</p>
-                    </div>
+                    {item.organizacao && (
+                      <div>
+                        <h4>Organização:</h4> <p>{item.organizacao}</p>
+                      </div>
+                    )}
+
                     <div>
                       <h4>Data:</h4> <p>{`${item.dia} de ${item.mes}`}</p>
                     </div>
@@ -99,7 +121,8 @@ const CardEvent = () => {
                         ))}
                       </ul>
                     </div>
-                    <div>
+                    {item.infoAdd.length > 0 && (
+                      <div>
                       <h4>Informações adicionais:</h4>
                       <ul>
                         {item.infoAdd.map((i, index) => (
@@ -107,12 +130,21 @@ const CardEvent = () => {
                         ))}
                       </ul>
                     </div>
-                    <S.ButtomClose onClick={() => setOpenCard(null)}>
-                      Fechar
-                    </S.ButtomClose>
+                    )}
+                    
                   </S.Infos>
                 </S.CardFullBody>
+                {/* Body */}
               </S.CardFullSize>
+              <S.ButtomClose
+                onClick={() => {
+                  setOpenCard(null);
+                  setSwiperOpen(false);
+                }}
+              >
+                Voltar
+              </S.ButtomClose>
+              {/* Botão Fechar */}
             </S.ContainerCardFull>
           )
       )}

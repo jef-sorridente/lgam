@@ -94,8 +94,8 @@ export const ButtomClose = styled(Buttom)`
 
   height: fit-content;
   position: absolute;
-  top: 40px;
-  right: 40px;
+  top: 8px;
+  right: 8px;
   z-index: 2;
 
   display: flex;

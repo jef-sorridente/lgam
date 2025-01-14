@@ -6,7 +6,7 @@
   height: 100%;
 
   background-color: #121212;
-  padding: 32px;
+  /* padding: 32px; */
 
   z-index: 11;
 }
@@ -17,7 +17,7 @@
 }
 
 .swiper-slide {
-  padding: 16px;
+  padding-top: 16px;
   text-align: center;
   font-size: 18px;
 
@@ -27,14 +27,14 @@
   align-items: center;
   @media (max-width: 768px) {
     padding: 0;
-    padding-top: 3rem;
+    /* padding-top: 8px; */
   }
 }
 
 .swiper-image {
   display: block;
-  /* width: 100%; */
   height: 100%;
+  padding-top: 16px;
   object-fit: contain;
   object-position: center;
 }
@@ -52,7 +52,7 @@
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #FBFBFB;
+  background-color: #121212;
 
   /* Center slide text vertically */
   display: flex;
@@ -112,6 +112,12 @@
   height: 80%;
   width: 100%;
 }
+
+.mySwiper2 .swiper-slide {
+  padding: 32px;
+}
+
+
 
 .mySwiper {
   height: 20%;

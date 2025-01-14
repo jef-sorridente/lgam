@@ -21,6 +21,7 @@ const Header = () => {
       top: 0,
       behavior: "smooth",
     });
+    setToggleButtomMobile(false)
   };
 
   useEffect(() => {
@@ -38,6 +39,8 @@ const Header = () => {
     };
   }, [toggleButtomMobile]);
 
+  console.log(toggleButtomMobile)
+
   return (
     <S.Header>
       <S.Content>
@@ -47,10 +50,13 @@ const Header = () => {
             {toggleButtom ? (
               <>
                 <MainList onItemClick={handleClick} />
-                <S.IoCloseCustom fontSize={32} onClick={() => {
-                  handleClick();
-                  setToggleButtomMobile(false);
-                }} />
+                <S.IoCloseCustom
+                  fontSize={32}
+                  onClick={() => {
+                    handleClick();
+                    setToggleButtomMobile(false);
+                  }}
+                />
               </>
             ) : (
               <S.FaBarsStaggeredCustom
