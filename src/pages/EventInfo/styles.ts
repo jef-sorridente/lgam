@@ -52,6 +52,7 @@ export const ContainerCard = styled.div`
 `;
 
 export const ContainerImg = styled.div`
+  max-height: 600px;
   height: 80vh;
   position: relative;
   overflow: hidden;

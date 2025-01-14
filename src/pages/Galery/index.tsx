@@ -3,6 +3,7 @@ import Title from "../../components/Title";
 import * as S from "./styles";
 
 import background from "../../assets/images/Gallery/background.webp";
+import Teste from "../../components/Teste";
 
 const Galery = () => (
   <>

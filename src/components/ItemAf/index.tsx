@@ -1,6 +1,9 @@
 import { useState } from "react";
 import * as S from "./styles";
 
+import { FaArrowRight } from "react-icons/fa";
+import { GoPlus } from "react-icons/go";
+
 // import { IoIosCloseCircle, IoIosAddCircle } from "react-icons/io";
 
 // import { Filiados } from "./affiliates";
@@ -9,6 +12,8 @@ import { Cidades } from "./affiliates";
 type Equipe = {
   id: number;
   nome_equipe: string;
+  foto_academia: string;
+  foto_responsavel: string;
   alvara_valido: boolean;
   responsavel: string;
   endereco: string;
@@ -26,69 +31,202 @@ type Equipe = {
 
 const ItemAf = () => {
   const [selectedEquipes, setSelectedEquipes] = useState<Equipe[]>([]);
+  const [openFiliados, setOpenFiliados] = useState<{ [key: number]: boolean }>(
+    {}
+  );
+  const [openDetails, setOpenDetails] = useState<{ [key: number]: boolean }>(
+    {}
+  );
+  const [isActiveCity, setIsActiveCity] = useState<boolean>(false);
+  const [isActiveDetails, setIsActiveDetails] = useState<boolean>(false);
 
   const handleCidadeClick = (equipes: Equipe[]) => {
     setSelectedEquipes(equipes);
+    setIsActiveCity(!isActiveCity);
+  };
+
+  const handleFiliadosClick = (equipeId: number) => {
+    setOpenFiliados((prev) => ({
+      ...prev,
+      [equipeId]: !prev[equipeId],
+    }));
+  };
+
+  const handleDetailsClick = (alunoID: number) => {
+    setOpenDetails((prev) => ({
+      ...prev,
+      [alunoID]: !prev[alunoID],
+    }));
+    setIsActiveDetails(!isActiveDetails);
   };
 
   return (
     <>
       <S.Container>
-        {/* Informações */}
-        <S.InfosEsquerda>
-          <div>
-            <S.Title>Escolha o minicípio ao lado</S.Title>
-            <p>
-              Associações filiadas à LGAM e em dia com suas obrigações
-              estaturárias.
-            </p>
+        <S.ContainerSlide className={isActiveCity ? "active" : ""}>
+          <div className="container-cidades">
+            {/* Informações */}
+            <S.InfosEsquerda>
+              <div>
+                <S.Title>Escolha o minicípio ao lado</S.Title>
+                <p>
+                  Associações filiadas à LGAM e em dia com suas obrigações
+                  estaturárias.
+                </p>
+              </div>
+              <S.CardFiliar>
+                <S.Title>Fale conosco e filie-se!</S.Title>
+                <S.Button type="button" title="Quero me filiar">
+                  Quero me filiar
+                </S.Button>
+              </S.CardFiliar>
+            </S.InfosEsquerda>
+            {/* Informações */}
+
+            {/* Container Cidades */}
+            <S.ContainerCidades>
+              {Cidades.cidade.map((cidade) => (
+                <S.Cidades
+                  key={cidade.nome}
+                  onClick={() => handleCidadeClick(cidade.equipes)}
+                >
+                  {cidade.nome}
+                </S.Cidades>
+              ))}
+            </S.ContainerCidades>
+            {/* Container Cidades */}
           </div>
-          <S.CardFiliar>
-            <S.Title>Fale conosco e filie-se!</S.Title>
-            <S.Button type="button" title="Quero me filiar">
-              Quero me filiar
-            </S.Button>
-          </S.CardFiliar>
-        </S.InfosEsquerda>
-        {/* Informações */}
 
-        {/* Container Cidades */}
-        <S.ContainerCidades>
-          {Cidades.cidade.map((cidade) => (
-            <S.Cidades
-              key={cidade.nome}
-              onClick={() => handleCidadeClick(cidade.equipes)}
-            >
-              {cidade.nome}
-            </S.Cidades>
-          ))}
-        </S.ContainerCidades>
-        {/* Container Cidades */}
+          {/* Container Equipes */}
+          <S.ContainerEquipes>
+            {selectedEquipes.length > 0 && (
+              // Equipes
+              <S.Equipe>
+                {selectedEquipes.map((equipe) => (
+                  <div key={equipe.id}>
+                    <S.EquipeHeader>
+                      <S.FotosEquipe>
+                        <img
+                          src={equipe.foto_academia}
+                          alt={equipe.nome_equipe}
+                        />
+                        <img
+                          src={equipe.foto_responsavel}
+                          alt={equipe.nome_equipe}
+                        />
+                      </S.FotosEquipe>
+
+                      <S.InfoEquipe>
+                        <h2>Equipe {equipe.nome_equipe}</h2>
+                        <p>
+                          <strong>Alvará: </strong>
+                          {equipe.alvara_valido ? "Válido" : "Inválido"}
+                        </p>
+                        <p>
+                          <strong>Responsável: </strong>
+                          {equipe.responsavel}
+                        </p>
+                        <p>
+                          <strong>Endereço:</strong> {equipe.endereco}
+                        </p>
+                        <p>
+                          <strong>Contato: </strong>
+                          {equipe.contato}
+                        </p>
+                      </S.InfoEquipe>
+
+                      {/* Alunos Filiados */}
+                      <h2
+                        className="titulo-filiados"
+                        onClick={() => handleFiliadosClick(equipe.id)}
+                      >
+                        Filiados da equipe <FaArrowRight />
+                      </h2>
+                      {openFiliados[equipe.id] && (
+                        <S.ListaAlunos>
+                          <ul className="lista-header">
+                            <li></li>
+                            <li>Nome</li>
+                            <li>Graduação</li>
+                            <li>Data de Nascimento</li>
+                          </ul>
+
+                          {equipe.alunos_filiados.map((aluno) => (
+                            <>
+                              <ul
+                                className={`lista-body ${
+                                  isActiveDetails ? "active" : ""
+                                }`}
+                              >
+                                <li className="foto-aluno">
+                                  <img
+                                    src={aluno.foto ? aluno.foto : ""}
+                                    alt={aluno.nome_aluno}
+                                  />
+                                </li>
+                                <li className="list-item social">
+                                  <p>{aluno.nome_aluno}</p>
+                                  <p>@instagram</p>
+                                </li>
+                                <li className="list-item social">
+                                  <p>Professor/Atleta</p>
+                                  <p>{aluno.graduacao}</p>
+                                </li>
+                                <li className="list-item">
+                                  {aluno.data_nascimento}
+                                </li>
+                                <li
+                                  className="detalhes"
+                                  onClick={() => handleDetailsClick(aluno.id)}
+                                >
+                                  Detalhes <GoPlus />
+                                </li>
+
+                                {openDetails[aluno.id] && (
+                                  <ul className="detalhes-open">
+                                    <li className="detalhes-item">
+                                      <p>Nº registro LGAM:</p>
+                                      <p>{aluno.n_lgam}</p>
+                                    </li>
+                                    <li className="detalhes-item">
+                                      <p>Nº registro Liga Nacional: </p>
+                                      <p>{aluno.n_liga_nacional}</p>
+                                    </li>
+                                  </ul>
+                                )}
+                              </ul>
+                            </>
+                          ))}
+                        </S.ListaAlunos>
+                      )}
+                    </S.EquipeHeader>
+                    <hr />
+                  </div>
+                ))}
+              </S.Equipe>
+              // Equipes
+            )}
+
+            <S.InfosDireita>
+              <S.CardFiliar className="right">
+                <S.Title>Fale conosco e filie-se!</S.Title>
+                <S.Button type="button" title="Quero me filiar">
+                  Quero me filiar
+                </S.Button>
+              </S.CardFiliar>
+              <button
+                className="voltar"
+                title="voltar"
+                type="button"
+                onClick={() => handleCidadeClick([])}
+              >
+                Volta para os municípios
+              </button>
+            </S.InfosDireita>
+            {/* Informaçõe Direita */}
+          </S.ContainerEquipes>
+        </S.ContainerSlide>
       </S.Container>
-
-      {/* Container Equipes */}
-      <S.ContainerEquipes>
-        {selectedEquipes.length > 0 && (
-          <S.Equipe>
-            {selectedEquipes.map((equipe) => (
-              <>
-                <S.Title>Equipe {equipe.nome_equipe}</S.Title>
-
-                <div>
-                  {equipe.alunos_filiados.map((aluno) => (
-                    <>{aluno.nome_aluno}</>
-                  ))}
-                </div>
-              </>
-            ))}
-          </S.Equipe>
-        )}
-      </S.ContainerEquipes>
-      {/* Container Equipes */}
-
-      {/* Lista de Alunos Filiados */}
-
-      {/* Lista de Alunos Filiados */}
     </>
   );
 };

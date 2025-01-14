@@ -40,20 +40,24 @@ export const ConatinerSection = styled.div`
   }
 `;
 
-export const ContainerAffiliates = styled.div`
-  display: flex;
-  justify-content: start;
-  animation: anim-opacity 2s ease both;
+// export const ContainerAffiliates = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   /* animation: anim-opacity 2s ease both; */
+//   background-color: red;
+//   max-width: 1000px;
+//   width: 100%;
 
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-`;
+//   @media (max-width: 768px) {
+//     width: 100%;
+//   }
+// `;
 
 export const ContainerImg = styled.div`
   height: 80vh;
   position: relative;
   overflow: hidden;
+  max-height: 600px;
 
   span {
     position: absolute;

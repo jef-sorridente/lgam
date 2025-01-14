@@ -3,16 +3,15 @@ import { Photos } from "./photos";
 import { useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-// import required modules
-import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/free-mode";
+import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "swiper/css/thumbs";
 
 import "./styles.css";
+import Title from "../Title";
 
 type Photo = {
   id: number;
@@ -22,13 +21,7 @@ type Photo = {
 };
 
 const CardPhotos = () => {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [photoSelect, setPhotoSelect] = useState<Photo | null>(null);
-
-  const closePhotos = () => {
-    setPhotoSelect(null);
-    setThumbsSwiper(null);
-  };
 
   return (
     <>
@@ -43,38 +36,28 @@ const CardPhotos = () => {
           <S.ContainerText>
             <S.Title>{photo.title}</S.Title>
           </S.ContainerText>
+
+          
         </S.Container>
       ))}
 
       {photoSelect && (
         <div className="containerSwiper">
-          <S.ButtomClose onClick={() => closePhotos()}>Fechar</S.ButtomClose>
-          <Swiper
-            spaceBetween={16}
-            navigation={true}
-            thumbs={{ swiper: thumbsSwiper }}
-            modules={[FreeMode, Navigation, Thumbs]}
-            className="mySwiper2"
-          >
-            {photoSelect.photos?.map((p, i) => (
-              <SwiperSlide key={i}>
-                <S.Img className="swiper-image" src={p} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <S.ButtomClose onClick={() => setPhotoSelect(null)}>
+            Fechar
+          </S.ButtomClose>
 
           <Swiper
-            onSwiper={setThumbsSwiper}
-            // loop={true}
-            slidesPerView={5}
-            freeMode={true}
-            watchSlidesProgress={true}
-            modules={[FreeMode, Navigation, Thumbs]}
+            pagination={{
+              type: "fraction",
+            }}
+            navigation={true}
+            modules={[Pagination, Navigation]}
             className="mySwiper"
           >
             {photoSelect.photos?.map((p, i) => (
               <SwiperSlide key={i}>
-                <S.Img className="swiper-thumb" src={p} />
+                <S.Img src={p} />
               </SwiperSlide>
             ))}
           </Swiper>

@@ -1,6 +1,6 @@
 import image from "../../assets/images/img.png";
 import imgSobre from "../../assets/images/imgSobre.webp";
-import CardBanner from "../../components/CardBanner";
+// import CardBanner from "../../components/CardBanner";
 import CardNews from "../../components/CardNews";
 import CardVal from "../../components/CardVal";
 
@@ -101,15 +101,15 @@ const About = () => {
       {/* Valores */}
 
       {/* CardBanner */}
-      <CardBanner />
+      {/* <CardBanner /> */}
       {/* CardBanner */}
 
       {/* Novidades */}
-      <S.Novidades className="container">
+      {/* <S.Novidades className="container">
         <Title>novidades</Title>
         <S.ContainerNovidades>{Items}</S.ContainerNovidades>
         <button>Veja todas novidades</button>
-      </S.Novidades>
+      </S.Novidades> */}
       {/* Novidades */}
     </>
   );

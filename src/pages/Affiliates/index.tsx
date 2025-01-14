@@ -1,6 +1,6 @@
 import Title from "../../components/Title";
 import ItemAf from "../../components/ItemAf";
-import background from "../../assets/images/Affiliates/background.webp"
+import background from "../../assets/images/Affiliates/background.webp";
 
 import * as S from "./styles";
 
@@ -17,9 +17,9 @@ const Affiliates = () => {
 
       <S.Gallery>
         <S.Container className="container">
-          <S.ContainerAffiliates>
-            <ItemAf />
-          </S.ContainerAffiliates>
+          {/* <S.ContainerAffiliates> */}
+          <ItemAf />
+          {/* </S.ContainerAffiliates> */}
         </S.Container>
       </S.Gallery>
     </>

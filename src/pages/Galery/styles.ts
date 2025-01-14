@@ -31,6 +31,7 @@ export const ConatinerSection = styled.div`
 
   width: 100%;
   height: 80vh;
+
   top: 0;
   left: 0;
 
@@ -52,6 +53,7 @@ export const ContainerCard = styled.div`
 `;
 
 export const ContainerImg = styled.div`
+  max-height: 600px;
   height: 80vh;
   position: relative;
   overflow: hidden;
