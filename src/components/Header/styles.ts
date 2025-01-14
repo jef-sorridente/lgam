@@ -12,6 +12,7 @@ export const Header = styled.header`
 `;
 
 export const Content = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,4 +38,19 @@ export const FaBarsStaggeredCustom = styled(FaBarsStaggered)`
   z-index: 2;
   color: ${colors.white};
   cursor: pointer;
+`;
+
+export const Social = styled.div`
+  position: absolute;
+  top: 32px;
+  right: 0;
+
+  @media (max-width: 1200px) {
+    top: 20px;
+    right: 5%;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;

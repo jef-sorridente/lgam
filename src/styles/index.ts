@@ -11,16 +11,21 @@ const StyleGlobal = createGlobalStyle`
         list-style: none;
         text-decoration: none;
         object-fit: contain;
+        scroll-behavior: smooth;
     } 
 
-    html{
+    /* html{
       overflow-x: hidden;
-    }
+    } */
 
     body{
       background-color: ${colors.white};
       color: #121212;      
-      
+    }
+
+    .redes {
+      display: flex;
+      gap: 6px;
     }
 
     /*Global Anim */

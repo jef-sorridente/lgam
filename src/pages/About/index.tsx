@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import image from "../../assets/images/img.png";
 import imgSobre from "../../assets/images/imgSobre.webp";
 // import CardBanner from "../../components/CardBanner";
@@ -41,9 +42,11 @@ const About = () => {
                 superação!
               </Text>
             </strong>
-            <button type="button" title="Mais sobre nós">
-              Mais sobre nós
-            </button>
+            <NavLink to="/eventos">
+              <button type="button" title="Veja nossos eventos">
+                Veja nossos eventos
+              </button>
+            </NavLink>
           </S.ContainerTexts>
           <S.Image
             src={imgSobre}

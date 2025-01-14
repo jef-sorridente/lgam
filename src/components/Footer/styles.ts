@@ -111,4 +111,13 @@ export const FooterBottom = styled.div`
   p {
     margin-bottom: 8px;
   }
+
+  a {
+    color: ${colors.white};
+    transition: all ease .5s;
+
+    &:hover {
+      filter: brightness(.8);
+    }
+  }
 `;

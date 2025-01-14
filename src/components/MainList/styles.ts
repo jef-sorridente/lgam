@@ -5,6 +5,7 @@ import { darken } from "polished";
 export const List = styled.ul`
   display: flex;
   gap: 16px;
+  position: relative;
 
   @media (max-width: 768px) {
     position: absolute;
@@ -47,3 +48,4 @@ export const ItemList = styled.li`
     color: ${darken(0.2, colors.white)};
   }
 `;
+

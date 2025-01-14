@@ -26,7 +26,9 @@ const SwiperHome = () => {
           A força não vem da capacidade física, mas de uma vontade indomável.
         </h2>
         <p>“Mahatma Gandhi”</p>
-        <button>Faça parte do nossa família</button>
+        <a href="#contato">
+          <button type="button" title="Entre em contato">Faça parte do nossa família</button>
+        </a>
       </S.Text>
       <S.SwiperSlideCustom>
         <img src={background_1} alt="background" />
