@@ -4,6 +4,6 @@ import { Props } from ".";
 type PropsActive = Omit<Props, "children">;
 
 export const Text = styled.p<PropsActive>`
-  color: ${({ secundarycolor }) => (secundarycolor ? "#fff" : "#9899a0")};
+  color: #fff;
   font-size: 18px;
 `;

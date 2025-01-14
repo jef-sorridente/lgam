@@ -66,10 +66,6 @@ const CardEvent = () => {
             <S.Img src={evento.thumbnail} />
             <span></span>
           </S.Body>
-          {/* <S.Footer>
-            <Text secundarycolor={true}>{`Local: ${evento.local}`}</Text>
-            <S.Buttom onClick={() => setOpenCard(evento)}>Detalhes</S.Buttom>
-          </S.Footer> */}
         </S.Card>
       ))}
       {transition(

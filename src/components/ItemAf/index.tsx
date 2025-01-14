@@ -143,7 +143,7 @@ const ItemAf = () => {
                         Filiados da equipe <FaArrowRight />
                       </h2>
                       {openFiliados[equipe.id] && (
-                        <S.ListaAlunos>
+                        <S.ListaAlunos key={equipe.id}>
                           <ul className="lista-header">
                             <li></li>
                             <li>Nome</li>

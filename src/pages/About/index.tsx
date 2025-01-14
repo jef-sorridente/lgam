@@ -29,7 +29,7 @@ const About = () => {
               src={imgSobre}
               alt="Mestres Fransico Chagas e Eliane de Avila"
             />
-            <Text secundarycolor={true}>
+            <Text>
               Fundada em 2015 pelos mestres Eliane Padilha e Francisco Chagas, a
               Liga Gaúcha de Artes Marciais é uma organização dedicada a
               promover a prática e o conhecimento das artes marciais. Nosso
@@ -37,7 +37,7 @@ const About = () => {
               estruturada e inclusiva.
             </Text>
             <strong>
-              <Text secundarycolor={true}>
+              <Text>
                 Junte-se a nós na jornada da autodescoberta, disciplina e
                 superação!
               </Text>
@@ -58,10 +58,7 @@ const About = () => {
 
       {/* Missão */}
       <S.Missao>
-        <S.ConatinerSection
-          className="container"
-          flexDirection="column-reverse"
-        >
+        <S.ConatinerSection className="container column-reverse">
           <S.Image src={image} alt="Lutadores" />
           <S.ContainerTexts>
             <Title>missão</Title>
@@ -91,7 +88,7 @@ const About = () => {
 
       {/* Valores */}
       <S.Valores>
-        <S.ConatinerSection className="container" flexDirection="collum">
+        <S.ConatinerSection className="container collum">
           <S.ContainerCards>
             <Title>Valores</Title>
             {Valores &&

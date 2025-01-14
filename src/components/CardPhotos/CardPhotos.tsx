@@ -54,6 +54,7 @@ const CardPhotos = () => {
     <>
       {Photos.map((photo) => (
         <S.Container
+          key={photo.id}
           onClick={() => {
             setPhotoSelect(photo);
             setSwiperOpen(true);
