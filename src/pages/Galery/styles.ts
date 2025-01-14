@@ -3,6 +3,8 @@ import colors from "../../styles/variables";
 
 export const Gallery = styled.section`
   background-color: ${colors.black};
+  /* position: relative;
+  z-index: 2; */
 `;
 
 export const Container = styled.section`
@@ -11,7 +13,7 @@ export const Container = styled.section`
   flex-direction: column;
   gap: 100px;
   height: 100vh;
-  animation: anim-opacity 1s ease both;
+  /* animation: anim-opacity 1s ease both; */
 
   @media (max-width: 768px) {
     padding: 100px 0;
@@ -45,10 +47,11 @@ export const ContainerCard = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
-  animation: anim-opacity 2s ease both;
+  /* animation: anim-opacity 2s ease both; */
 
   @media (max-width: 768px) {
     width: 100%;
+    gap: 16px;
   }
 `;
 
@@ -57,6 +60,7 @@ export const ContainerImg = styled.div`
   height: 80vh;
   position: relative;
   overflow: hidden;
+  margin-top: -158px;
 
   span {
     position: absolute;

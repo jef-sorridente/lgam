@@ -35,7 +35,7 @@ export const AnimationCircle = styled(Animation)`
 export const Container = styled.section`
   display: flex;
   flex-direction: column;
-  animation: anim-opacity 1s ease both;
+  /* animation: anim-opacity 1s ease both; */
   gap: 200px;
 
   @media (max-width: 768px) {

@@ -41,7 +41,7 @@ const StyleGlobal = createGlobalStyle`
   margin: auto;
 
   @media (max-width: 1200px) {
-    padding: 0 5vw !important; 
+    padding: 5vw !important; 
   }
   }
   

@@ -55,6 +55,20 @@ export const ContainerEquipes = styled.div`
 
   display: flex;
   justify-content: space-between;
+  
+
+  .voltar {
+    font-size: 20px;
+    padding: 16px;
+    background-image: linear-gradient(to right, #e9272e, #c71c22);
+    transition: all 0.3s;
+    color: #fbfbfb;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+
+    height: fit-content;
+  }
 `;
 
 export const InfosEsquerda = styled.div`
@@ -207,7 +221,7 @@ export const ListaAlunos = styled.div`
 
       &.social {
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: start;
         gap: 4px;
       }
@@ -267,21 +281,8 @@ export const InfoEquipe = styled.div`
   }
 `;
 
-export const InfosDireita = styled.div`
-  position: relative;
-  height: min-content;
-  .voltar {
-    font-size: 20px;
-    padding: 16px;
-    background-image: linear-gradient(to right, #e9272e, #c71c22);
-    transition: all 0.3s;
-    color: #fbfbfb;
-    border: none;
-    border-radius: 16px;
-    cursor: pointer;
-    position: relative;
-    top: 0;
-    right: 0;
-    width: 300px;
-  }
-`;
+// export const InfosDireita = styled.div`
+//   position: relative;
+//   height: min-content;
+//
+// `;

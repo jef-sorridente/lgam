@@ -8,7 +8,7 @@
   background-color: #121212;
   padding: 32px;
 
-  z-index: 1;
+  z-index: 11;
 }
 
 .swiper {
@@ -41,7 +41,7 @@
 
 .swiper-button-prev,
 .swiper-button-next {
-  color: #fff;
+  color: #E9272E;
 }
 
 .swiper {
@@ -52,7 +52,7 @@
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
+  background: #FBFBFB;
 
   /* Center slide text vertically */
   display: flex;
@@ -60,8 +60,41 @@
   align-items: center;
 }
 
+.download-btn {
+  font-size: 16px;
+  padding: 8px 16px;
+  /* background-image: linear-gradient(to right, #e9272e, #c71c22); */
+  transition: all 0.3s;
+  color: #e9272e;
+  border: 2px solid #e9272e;
+  border-radius: 16px;
+  cursor: pointer;
+
+  height: fit-content;
+  position: absolute;
+  top: 8px;
+  right: 118px;
+  z-index: 2;
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.download-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.download-btn:hover {
+  background-color: #E9272E;
+  color: #fbfbfb;
+}
+
+
 .swiper-slide-fully-visible img {
-  opacity: 0.4;
+  opacity: 0.4;  
 }
 .swiper-slide-thumb-active img {
   opacity: 1;

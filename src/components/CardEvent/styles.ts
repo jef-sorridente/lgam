@@ -8,21 +8,20 @@ export const Card = styled.div`
   flex-direction: column;
   height: 400px;
   width: 400px;
-  padding: 32px;
 
   cursor: pointer;
 
-  &:hover span{
+  &:hover span {
     opacity: 0.4;
   }
 
-  @media (max-width: 1024px) {
+  /* @media (max-width: 1024px) {
     width: 49%;
-  }
+  }*/
 
   @media (max-width: 768px) {
-    width: 100%;
-  }
+    justify-content: center;
+  } 
 `;
 
 export const Header = styled.header`
@@ -74,7 +73,7 @@ export const Body = styled.main`
     top: 0;
     left: 0;
 
-    transition: all .5s ease;
+    transition: all 0.5s ease;
   }
 `;
 

@@ -35,6 +35,10 @@ export const ContainerText = styled.div`
   top: 0;
   left: 0;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
 `;
 
 export const Title = styled.h3`
@@ -45,7 +49,7 @@ export const Title = styled.h3`
   text-transform: uppercase;
 
   text-align: center;
-`
+`;
 
 export const ContainerImg = styled.div`
   overflow: hidden;
@@ -59,9 +63,8 @@ export const ContainerImg = styled.div`
     top: 0;
     left: 0;
 
-    transition: all .5s ease;
+    transition: all 0.5s ease;
   }
-
 `;
 
 export const Img = styled.img`
@@ -80,8 +83,26 @@ export const Buttom = styled.button`
 `;
 
 export const ButtomClose = styled(Buttom)`
+  font-size: 16px;
+  padding: 8px 16px;
+  background-color: #e9272e;
+  transition: all 0.3s;
+  color: #fbfbfb;
+  border: 2px solid #e9272e;
+  border-radius: 16px;
+  cursor: pointer;
+
+  height: fit-content;
   position: absolute;
-  bottom: 16px;
-  left: 50%;
-  transform: translate(-50%);
+  top: 40px;
+  right: 40px;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  svg {
+    rotate: 180deg;
+  }
 `;

@@ -4,9 +4,11 @@ import { FaBarsStaggered } from "react-icons/fa6";
 import colors from "../../styles/variables";
 
 export const Header = styled.header`
-  position: absolute;
+  position: relative;
+  top: 0;
+  left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 2;
 `;
 
 export const Content = styled.div`

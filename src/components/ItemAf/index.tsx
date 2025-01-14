@@ -207,23 +207,15 @@ const ItemAf = () => {
               // Equipes
             )}
 
-            <S.InfosDireita>
-              <S.CardFiliar className="right">
-                <S.Title>Fale conosco e filie-se!</S.Title>
-                <S.Button type="button" title="Quero me filiar">
-                  Quero me filiar
-                </S.Button>
-              </S.CardFiliar>
-              <button
-                className="voltar"
-                title="voltar"
-                type="button"
-                onClick={() => handleCidadeClick([])}
-              >
-                Volta para os municípios
-              </button>
-            </S.InfosDireita>
-            {/* Informaçõe Direita */}
+            <button
+              className="voltar"
+              title="voltar"
+              type="button"
+              onClick={() => handleCidadeClick([])}
+            >
+              Volta para os municípios
+            </button>
+            {/* Botão Voltar */}
           </S.ContainerEquipes>
         </S.ContainerSlide>
       </S.Container>

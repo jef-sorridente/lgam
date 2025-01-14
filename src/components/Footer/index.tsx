@@ -78,7 +78,7 @@ const Footer = () => (
           </svg>
         </p>
       </List>
-      <List>
+      <List className="d-mobilde-none">
         <p className="institucional">
           <strong>Institucional</strong>
         </p>

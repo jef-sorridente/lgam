@@ -93,6 +93,12 @@ export const List = styled.div`
       margin: auto;
     }
   }
+
+  &.d-mobilde-none {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
 `;
 export const FooterBottom = styled.div`
   margin: auto;

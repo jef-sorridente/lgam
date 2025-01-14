@@ -54,6 +54,7 @@ export const ConatinerSection = styled.div`
 // `;
 
 export const ContainerImg = styled.div`
+  margin-top: -158px;
   height: 80vh;
   position: relative;
   overflow: hidden;

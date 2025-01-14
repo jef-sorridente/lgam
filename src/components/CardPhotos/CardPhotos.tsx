@@ -1,6 +1,6 @@
 import * as S from "./styles";
 import { Photos } from "./photos";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 // import required modules
@@ -14,6 +14,10 @@ import "swiper/css/thumbs";
 
 import "./styles.css";
 
+// icons
+import { FaArrowRight } from "react-icons/fa";
+import { MdOutlineFileDownload } from "react-icons/md";
+
 type Photo = {
   id: number;
   title?: string;
@@ -24,16 +28,39 @@ type Photo = {
 const CardPhotos = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [photoSelect, setPhotoSelect] = useState<Photo | null>(null);
+  const [swiperOpen, setSwiperOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (swiperOpen) {
+      document.body.style.overflow = "hidden";
+      document.body.style.height = "100vh";
+    } else {
+      document.body.style.overflow = "";
+      document.body.style.height = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+      document.body.style.height = "";
+    };
+  }, [swiperOpen]);
 
   const closePhotos = () => {
     setPhotoSelect(null);
     setThumbsSwiper(null);
   };
 
+  console.log(swiperOpen);
+
   return (
     <>
       {Photos.map((photo) => (
-        <S.Container onClick={() => setPhotoSelect(photo)}>
+        <S.Container
+          onClick={() => {
+            setPhotoSelect(photo);
+            setSwiperOpen(true);
+          }}
+        >
           <S.ContainerImg key={photo.id}>
             <S.Img src={photo.thamb} />
 
@@ -48,7 +75,14 @@ const CardPhotos = () => {
 
       {photoSelect && (
         <div className="containerSwiper">
-          <S.ButtomClose onClick={() => closePhotos()}>Fechar</S.ButtomClose>
+          <S.ButtomClose
+            onClick={() => {
+              closePhotos();
+              setSwiperOpen(false);
+            }}
+          >
+            <FaArrowRight /> Voltar
+          </S.ButtomClose>
           <Swiper
             spaceBetween={16}
             navigation={true}
@@ -56,9 +90,18 @@ const CardPhotos = () => {
             modules={[FreeMode, Navigation, Thumbs]}
             className="mySwiper2"
           >
-            {photoSelect.photos?.map((p, i) => (
+            {photoSelect.photos?.map((photo, i) => (
               <SwiperSlide key={i}>
-                <S.Img className="swiper-image" src={p} />
+                <S.Img className="swiper-image" src={photo} />
+
+                <a
+                  className="download-btn"
+                  href={photo}
+                  download={photo}
+                  title="Fazer download"
+                >
+                  <MdOutlineFileDownload />
+                </a>
               </SwiperSlide>
             ))}
           </Swiper>
