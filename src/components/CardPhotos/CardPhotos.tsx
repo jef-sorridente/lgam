@@ -3,6 +3,7 @@ import { Photos } from "./photos";
 import { useEffect, useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper as SwiperType } from "swiper";
 // import required modules
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 
@@ -26,7 +27,7 @@ type Photo = {
 };
 
 const CardPhotos = () => {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
   const [photoSelect, setPhotoSelect] = useState<Photo | null>(null);
   const [swiperOpen, setSwiperOpen] = useState<boolean>(false);
 
