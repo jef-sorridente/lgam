@@ -2,12 +2,15 @@
 import chico from "./Images/chico.jpg";
 import kim_logo from "./Images/equipes/kim.jpg";
 
-// Alunos
+// Alunos Kim
 import alceni from "./Images/alceni.jpg";
 import batista from "./Images/batista.jpg";
 import eliane from "./Images/liane.jpg";
 import emanuele from "./Images/emauele.jpg";
 import wellington from "./Images/wellington.jpg";
+
+// Alunos Dragon
+import luciano from "./Images/luciano.jpg";
 
 export const Cidades = {
   cidade: [
@@ -98,68 +101,81 @@ export const Cidades = {
             },
           ],
         },
-        {
-          id: 2,
-          nome_equipe: "Kim Yu Shin",
-          foto_academia: "kimyushin",
-          foto_responsavel: chico,
-          alvara_valido: true,
-          responsavel: "Francisco Chagas da Luz",
-          endereco: "Rua Bartolomeu de Gusmão 1411",
-          contato: "51 9 9999-999",
-          alunos_filiados: [
-            {
-              id: 1,
-              nome_aluno: "Emanuele Mariane Padilha da Luz",
-              graduacao: "2° Dan",
-              data_nascimento: "26/12/2009",
-              n_lgam: 123456,
-              n_liga_nacional: 123456,
-              foto: emanuele,
-            },
-            {
-              id: 2,
-              nome_aluno: "Jeferson Josué Padilha Soares",
-              graduacao: "2° Dan",
-              data_nascimento: "15/06/1999",
-              n_lgam: 123456,
-              n_liga_nacional: 123456,
-              foto: emanuele,
-            },
-          ],
-        },
       ],
     },
     {
       nome: "São Leopoldo",
       equipes: [
         {
-          id: 3,
-          nome_equipe: "Equipe 3",
+          id: 2,
+          nome_equipe: "The Flash",
           foto_academia: "",
-          foto_responsavel: chico,
+          foto_responsavel: "",
           alvara_valido: true,
-          responsavel: "Francisco Chagas da Luz",
-          endereco: "Rua Bartolomeu de Gusmão 1411",
-          contato: "51 9 9999-999",
+          responsavel: "Eduardo Flores",
+          endereco: "",
+          contato: "",
           alunos_filiados: [
             {
-              id: 3,
-              nome_aluno: "Emanuele Mariane Padilha da Luz",
+              id: 1,
+              nome_aluno: "Eduardo Flores",
               graduacao: "2° Dan",
-              data_nascimento: "26/12/2009",
-              n_lgam: "123456",
-              n_liga_nacional: "123456",
-              foto: emanuele,
+              data_nascimento: "13/11/1980",
+              n_lgam: "",
+              n_liga_nacional: "0363",
+              foto: "",
             },
+          ],
+        },
+      ],
+    },
+    {
+      nome: "Sobradinho",
+      equipes: [
+        {
+          id: 3,
+          nome_equipe: "Mid Night Team",
+          foto_academia: "",
+          foto_responsavel: "",
+          alvara_valido: true,
+          responsavel: "André Felippe",
+          endereco: "",
+          contato: "",
+          alunos_filiados: [
             {
-              id: 4,
-              nome_aluno: "Jeferson Josué Padilha Soares",
+              id: 1,
+              nome_aluno: "André Felippe",
+              graduacao: "1° Dan",
+              data_nascimento: "15/05/1996",
+              n_lgam: "",
+              n_liga_nacional: "4048",
+              foto: "",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      nome: "Montenegro",
+      equipes: [
+        {
+          id: 4,
+          nome_equipe: "Dragon",
+          foto_academia: "",
+          foto_responsavel: luciano,
+          alvara_valido: true,
+          responsavel: "Luciano da Silva",
+          endereco: "",
+          contato: "",
+          alunos_filiados: [
+            {
+              id: 1,
+              nome_aluno: "Luciano da Silva",
               graduacao: "2° Dan",
-              data_nascimento: "15/06/1999",
-              n_lgam: "123456",
-              n_liga_nacional: "123456",
-              foto: emanuele,
+              data_nascimento: "07/11/1975",
+              n_lgam: "",
+              n_liga_nacional: "3704",
+              foto: luciano,
             },
           ],
         },
