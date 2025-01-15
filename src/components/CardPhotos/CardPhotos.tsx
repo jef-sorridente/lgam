@@ -68,6 +68,7 @@ const CardPhotos = () => {
 
           <S.ContainerText>
             <S.Title>{photo.title}</S.Title>
+            <p>{photo.date}</p>
           </S.ContainerText>
         </S.Container>
       ))}

@@ -26,6 +26,7 @@ export const Container = styled.div`
 
 export const ContainerText = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -35,6 +36,12 @@ export const ContainerText = styled.div`
   top: 0;
   left: 0;
   z-index: 1;
+
+  p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fbfbfb;
+  }
 
   @media (max-width: 768px) {
     padding: 16px;
