@@ -10,8 +10,8 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
   gap: 100px;
-  height: 100vh;
-  animation: anim-opacity 1s ease both;
+  /* height: 100vh; */
+  /* animation: anim-opacity 1s ease both; */
 
   @media (max-width: 768px) {
     padding: 100px 0;
