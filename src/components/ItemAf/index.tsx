@@ -23,8 +23,8 @@ type Equipe = {
     nome_aluno: string;
     graduacao: string;
     data_nascimento: string | null;
-    n_lgam: number | null;
-    n_liga_nacional: number | null;
+    n_lgam: string | null;
+    n_liga_nacional: string | null;
     foto: string | null;
   }[];
 };
@@ -171,7 +171,7 @@ const ItemAf = () => {
                                   <p>@instagram</p>
                                 </li>
                                 <li className="list-item social d-mobile-none">
-                                  <p>Professor / Atleta</p>
+                                  {/* <p>Professor / Atleta</p> */}
                                   <p>{aluno.graduacao}</p>
                                 </li>
                                 <li className="list-item d-mobile-none">
@@ -197,7 +197,10 @@ const ItemAf = () => {
 
                                     <li className="detalhes-item">
                                       <p>Graduação: </p>
-                                      <p>{aluno.graduacao} Professor / Atleta</p>
+                                      <p>
+                                        {aluno.graduacao}
+                                        {/* Professor / Atleta */}
+                                      </p>
                                     </li>
                                     <li className="detalhes-item">
                                       <p> Data de Nascimento: </p>
