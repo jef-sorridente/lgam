@@ -62,6 +62,7 @@ export const ContainerEquipes = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column-reverse;
+    justify-content: start;
   }
 
   .voltar {
@@ -329,6 +330,8 @@ export const FotosEquipe = styled.div`
   img {
     width: 250px;
     height: 250px;
+    object-fit: cover;
+    object-position: top;
 
     @media (max-width: 768px) {
       width: 150px;

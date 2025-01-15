@@ -225,7 +225,9 @@ const ItemAf = () => {
               className="voltar"
               title="voltar"
               type="button"
-              onClick={() => handleCidadeClick([])}
+              onClick={() => {
+                handleCidadeClick([]);
+              }}
             >
               Volta para os municípios
             </button>
