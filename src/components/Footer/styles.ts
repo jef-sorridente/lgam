@@ -94,6 +94,12 @@ export const List = styled.div`
     }
   }
 
+  .redes {
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+  }
+
   &.d-mobilde-none {
     @media (max-width: 768px) {
       display: none;
@@ -114,10 +120,10 @@ export const FooterBottom = styled.div`
 
   a {
     color: ${colors.white};
-    transition: all ease .5s;
+    transition: all ease 0.5s;
 
     &:hover {
-      filter: brightness(.8);
+      filter: brightness(0.8);
     }
   }
 `;

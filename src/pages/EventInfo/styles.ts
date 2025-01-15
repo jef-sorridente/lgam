@@ -10,7 +10,7 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
   gap: 100px;
-  height: 100vh;
+  /* height: 100vh; */
   /* animation: anim-opacity 1s ease both; */
 
   @media (max-width: 768px) {
@@ -48,8 +48,8 @@ export const ContainerCard = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
-     justify-content: center;
-     gap: 32px;
+    justify-content: center;
+    gap: 32px;
   }
 `;
 

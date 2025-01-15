@@ -3,8 +3,6 @@ import colors from "../../styles/variables";
 
 export const Gallery = styled.section`
   background-color: ${colors.black};
-  /* position: relative;
-  z-index: 2; */
 `;
 
 export const Container = styled.section`
@@ -12,7 +10,7 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
   gap: 100px;
-  height: 100vh;
+  /* height: 100vh; */
   /* animation: anim-opacity 1s ease both; */
 
   @media (max-width: 768px) {
