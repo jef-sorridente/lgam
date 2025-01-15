@@ -6,6 +6,7 @@ import kim_logo from "./Images/equipes/kim.jpg";
 import alceni from "./Images/alceni.jpg";
 import batista from "./Images/batista.jpg";
 import eliane from "./Images/liane.jpg";
+import joao from "./Images/joao.jpg";
 import emanuele from "./Images/emauele.jpg";
 import wellington from "./Images/wellington.jpg";
 
@@ -88,7 +89,7 @@ export const Cidades = {
               data_nascimento: "03/10/2008",
               n_lgam: "0032/2024",
               n_liga_nacional: "3439",
-              foto: "",
+              foto: joao,
             },
             {
               id: 8,
