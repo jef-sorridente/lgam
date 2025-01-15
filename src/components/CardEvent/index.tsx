@@ -119,15 +119,14 @@ const CardEvent = () => {
                     </div>
                     {item.infoAdd.length > 0 && (
                       <div>
-                      <h4>Informações adicionais:</h4>
-                      <ul>
-                        {item.infoAdd.map((i, index) => (
-                          <li key={index}>{i}</li>
-                        ))}
-                      </ul>
-                    </div>
+                        <h4>Informações adicionais:</h4>
+                        <ul>
+                          {item.infoAdd.map((i, index) => (
+                            <li key={index}>{i}</li>
+                          ))}
+                        </ul>
+                      </div>
                     )}
-                    
                   </S.Infos>
                 </S.CardFullBody>
                 {/* Body */}

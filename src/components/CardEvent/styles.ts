@@ -216,7 +216,7 @@ export const ButtomClose = styled(Buttom)`
 `;
 
 export const CardFullImg = styled.img`
-  max-height: 550px;
+  max-height: 450px;
   /* width: 100%; */
 
   border-radius: 16px;
