@@ -6,6 +6,9 @@ import { GoPlus } from "react-icons/go";
 
 // import { IoIosCloseCircle, IoIosAddCircle } from "react-icons/io";
 
+// User photo default
+import userPhotoDefaut from "./Images/user.png";
+
 // import { Filiados } from "./affiliates";
 import { Cidades } from "./affiliates";
 
@@ -111,7 +114,11 @@ const ItemAf = () => {
                           alt={equipe.nome_equipe}
                         />
                         <img
-                          src={equipe.foto_responsavel}
+                          src={
+                            equipe.foto_responsavel
+                              ? equipe.foto_responsavel
+                              : userPhotoDefaut
+                          }
                           alt={equipe.nome_equipe}
                         />
                       </S.FotosEquipe>
@@ -162,13 +169,15 @@ const ItemAf = () => {
                               >
                                 <li className="foto-aluno">
                                   <img
-                                    src={aluno.foto ? aluno.foto : ""}
+                                    src={
+                                      aluno.foto ? aluno.foto : userPhotoDefaut
+                                    }
                                     alt={aluno.nome_aluno}
                                   />
                                 </li>
                                 <li className="list-item social">
                                   <p>{aluno.nome_aluno}</p>
-                                  <p>@instagram</p>
+                                  {/* <p>@instagram</p> */}
                                 </li>
                                 <li className="list-item social d-mobile-none">
                                   {/* <p>Professor / Atleta</p> */}

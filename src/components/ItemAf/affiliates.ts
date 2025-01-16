@@ -1,8 +1,6 @@
-// Responsáveis e logo
-import chico from "./Images/chico.jpg";
-import kim_logo from "./Images/equipes/kim.jpg";
-
 // Alunos Kim
+import kim_logo from "./Images/equipes/kim.jpg";
+import chico from "./Images/chico.jpg";
 import alceni from "./Images/alceni.jpg";
 import batista from "./Images/batista.jpg";
 import eliane from "./Images/liane.jpg";
@@ -10,8 +8,19 @@ import joao from "./Images/joao.jpg";
 import emanuele from "./Images/emauele.jpg";
 import wellington from "./Images/wellington.jpg";
 
-// Alunos Dragon
+// The Flash
+import eduardo from "./Images/eduardo.jpg";
+
+// Spider
+import spider from "./Images/equipes/spider.jpg";
+import luis from "./Images/luis.jpg";
+
+// Dragon
+import dragon from "./Images/equipes/dragon.jpg";
 import luciano from "./Images/luciano.jpg";
+
+// Dragon
+import mid from "./Images/equipes/mid.jpg";
 
 export const Cidades = {
   cidade: [
@@ -25,7 +34,7 @@ export const Cidades = {
           foto_responsavel: chico,
           alvara_valido: true,
           responsavel: "Francisco Chagas da Luz",
-          endereco: "Rua Bartolomeu de Gusmão 1411",
+          endereco: "Rua Bartolomeu de Gusmão 1411 - Canudos",
           contato: "51 9 9546-7409",
           alunos_filiados: [
             {
@@ -102,6 +111,36 @@ export const Cidades = {
             },
           ],
         },
+        {
+          id: 5,
+          nome_equipe: "Spider",
+          foto_academia: spider,
+          foto_responsavel: "",
+          alvara_valido: true,
+          responsavel: "Paulo Ferreira",
+          endereco: "Rua Gen. Cândido Mariano da Silva Rondon, 668 - Rondônia",
+          contato: "51 9 9589-5612",
+          alunos_filiados: [
+            {
+              id: 1,
+              nome_aluno: "Paulo Ferreira",
+              graduacao: "",
+              data_nascimento: "22/10/1975",
+              n_lgam: "0033/2024",
+              n_liga_nacional: "",
+              foto: "",
+            },
+            {
+              id: 2,
+              nome_aluno: "Luis  Gustavo Chassot",
+              graduacao: "1° Dan",
+              data_nascimento: "10/08/2008",
+              n_lgam: "",
+              n_liga_nacional: "",
+              foto: luis,
+            },
+          ],
+        },
       ],
     },
     {
@@ -111,11 +150,11 @@ export const Cidades = {
           id: 2,
           nome_equipe: "The Flash",
           foto_academia: "",
-          foto_responsavel: "",
+          foto_responsavel: eduardo,
           alvara_valido: true,
           responsavel: "Eduardo Flores",
-          endereco: "",
-          contato: "",
+          endereco: "Rua Caetano José Munhoz 306 - Vicentina Associação Ambav",
+          contato: "51 9 9242-7544",
           alunos_filiados: [
             {
               id: 1,
@@ -124,7 +163,7 @@ export const Cidades = {
               data_nascimento: "13/11/1980",
               n_lgam: "",
               n_liga_nacional: "0363",
-              foto: "",
+              foto: eduardo,
             },
           ],
         },
@@ -136,12 +175,13 @@ export const Cidades = {
         {
           id: 3,
           nome_equipe: "Mid Night Team",
-          foto_academia: "",
+          foto_academia: mid,
           foto_responsavel: "",
           alvara_valido: true,
           responsavel: "André Felippe",
-          endereco: "",
-          contato: "",
+          endereco:
+            "Rua do Governador Roberto Silveira 40 3 andar - Centro Macaé",
+          contato: "51 9 8023-3734",
           alunos_filiados: [
             {
               id: 1,
@@ -162,12 +202,12 @@ export const Cidades = {
         {
           id: 4,
           nome_equipe: "Dragon",
-          foto_academia: "",
+          foto_academia: dragon,
           foto_responsavel: luciano,
           alvara_valido: true,
           responsavel: "Luciano da Silva",
-          endereco: "",
-          contato: "",
+          endereco: "Rua Dr. Hans Varelmann, 205 - São Paulo, Montenegro - RS",
+          contato: "51 9 9582-1591",
           alunos_filiados: [
             {
               id: 1,

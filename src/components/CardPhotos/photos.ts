@@ -84,7 +84,7 @@ export const Photos = [
 
   {
     id: 2,
-    title: "Visita Iodin",
+    title: "Visita Yeo Jin Kim",
     date: "",
     thamb: Iodin1,
     photos: [Iodin1, Iodin2, Iodin3, Iodin4, Iodin5],
