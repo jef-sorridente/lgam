@@ -145,14 +145,9 @@ const Footer = () => {
                 fill="white"
               />
             </svg>
-            +55 (51) 9 9546-7409
+            +55 (51) 9 8529-7929
           </a>
-          <a
-            href="https://wa.me/5551995467409"
-            target="_blank"
-            title="whatsApp"
-            className="social"
-          >
+          <a className="social">
             <svg
               width="28"
               height="28"
