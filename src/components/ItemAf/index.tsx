@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as S from "./styles";
 
 import { FaArrowRight } from "react-icons/fa";
@@ -43,6 +43,12 @@ const ItemAf = () => {
   const [isActiveCity, setIsActiveCity] = useState<boolean>(false);
   const [isActiveDetails, setIsActiveDetails] = useState<boolean>(false);
 
+  const [dynamicHeight, setDynamicHeight] = useState<{ [key: number]: number }>(
+    {}
+  );
+
+  const tableRefs = useRef<{ [key: number]: HTMLDivElement | null }>({});
+
   const handleCidadeClick = (equipes: Equipe[]) => {
     setSelectedEquipes(equipes);
     setIsActiveCity(!isActiveCity);
@@ -63,6 +69,19 @@ const ItemAf = () => {
 
     setIsActiveDetails(!isActiveDetails);
   };
+
+  useEffect(() => {
+    Object.keys(openFiliados).forEach((key) => {
+      const id = parseInt(key);
+      if (openFiliados[id] && tableRefs.current[id]) {
+        const tableHeight = tableRefs.current[id]?.scrollHeight || 0;
+        setDynamicHeight((prev) => ({
+          ...prev,
+          [id]: tableHeight,
+        }));
+      }
+    });
+  }, [openFiliados]);
 
   return (
     <>
@@ -161,81 +180,91 @@ const ItemAf = () => {
                         >
                           Filiados da equipe <FaArrowRight />
                         </h2>
-                        {openFiliados[equipe.id] && (
-                          <S.ListaAlunos key={equipe.id}>
-                            <ul className="lista-header">
-                              <li></li>
-                              <li>Nome</li>
-                              <li className="d-mobile-none">Graduação</li>
-                              <li className="d-mobile-none">
-                                Data de Nascimento
-                              </li>
-                            </ul>
 
-                            {sortedFiliados.map((aluno) => (
-                              <>
-                                <ul
-                                  className={`lista-body ${
-                                    isActiveDetails ? "active" : ""
-                                  }`}
+                        <S.ListaAlunos
+                          ref={(el) => {
+                            if (el) {
+                              tableRefs.current[equipe.id] = el;
+                            } else {
+                              delete tableRefs.current[equipe.id];
+                            }
+                          }}
+                          key={equipe.id}
+                          dynamicheight={dynamicHeight[equipe.id] || 0}
+                          className={`${
+                            openFiliados[equipe.id] ? "active" : ""
+                          }`}
+                        >
+                          <ul className="lista-header">
+                            <li></li>
+                            <li>Nome</li>
+                            <li className="d-mobile-none">Graduação</li>
+                            <li className="d-mobile-none">
+                              Data de Nascimento
+                            </li>
+                          </ul>
+
+                          {sortedFiliados.map((aluno) => (
+                            <>
+                              <ul
+                                className={`lista-body ${
+                                  isActiveDetails ? "active" : ""
+                                }`}
+                              >
+                                <li className="foto-aluno">
+                                  <img
+                                    src={
+                                      aluno.foto ? aluno.foto : userPhotoDefaut
+                                    }
+                                    alt={aluno.nome_aluno}
+                                  />
+                                </li>
+                                <li className="list-item social">
+                                  <p>{aluno.nome_aluno}</p>
+                                  {/* <p>@instagram</p> */}
+                                </li>
+                                <li className="list-item social d-mobile-none">
+                                  {/* <p>Professor / Atleta</p> */}
+                                  <p>{aluno.graduacao}</p>
+                                </li>
+                                <li className="list-item d-mobile-none">
+                                  {aluno.data_nascimento}
+                                </li>
+                                <li
+                                  className="detalhes"
+                                  onClick={() => handleDetailsClick(aluno.id)}
                                 >
-                                  <li className="foto-aluno">
-                                    <img
-                                      src={
-                                        aluno.foto
-                                          ? aluno.foto
-                                          : userPhotoDefaut
-                                      }
-                                      alt={aluno.nome_aluno}
-                                    />
-                                  </li>
-                                  <li className="list-item social">
-                                    <p>{aluno.nome_aluno}</p>
-                                    {/* <p>@instagram</p> */}
-                                  </li>
-                                  <li className="list-item social d-mobile-none">
-                                    {/* <p>Professor / Atleta</p> */}
-                                    <p>{aluno.graduacao}</p>
-                                  </li>
-                                  <li className="list-item d-mobile-none">
-                                    {aluno.data_nascimento}
-                                  </li>
-                                  <li
-                                    className="detalhes"
-                                    onClick={() => handleDetailsClick(aluno.id)}
-                                  >
-                                    Detalhes <GoPlus />
-                                  </li>
+                                  Detalhes <GoPlus />
+                                </li>
 
-                                  {openDetails[aluno.id] && (
-                                    <ul className="detalhes-open">
-                                      <li className="detalhes-item">
-                                        <p>Nº registro LGAM:</p>
-                                        <p>{aluno.n_lgam}</p>
-                                      </li>
-                                      <li className="detalhes-item">
-                                        <p>Nº registro Liga Nacional: </p>
-                                        <p>{aluno.n_liga_nacional}</p>
-                                      </li>
+                                {openDetails[aluno.id] && (
+                                  <ul className="detalhes-open">
+                                    <li className="detalhes-item">
+                                      <p>Nº registro LGAM:</p>
+                                      <p>{aluno.n_lgam}</p>
+                                    </li>
+                                    <li className="detalhes-item">
+                                      <p>Nº registro Liga Nacional: </p>
+                                      <p>{aluno.n_liga_nacional}</p>
+                                    </li>
 
-                                      <li className="detalhes-item">
-                                        <p>Graduação: </p>
-                                        <p>
-                                          {aluno.graduacao}
-                                          {/* Professor / Atleta */}
-                                        </p>
-                                      </li>
-                                      <li className="detalhes-item">
-                                        <p> Data de Nascimento: </p>
-                                        <p>{aluno.data_nascimento}</p>
-                                      </li>
-                                    </ul>
-                                  )}
-                                </ul>
-                              </>
-                            ))}
-                          </S.ListaAlunos>
-                        )}
+                                    <li className="detalhes-item">
+                                      <p>Graduação: </p>
+                                      <p>
+                                        {aluno.graduacao}
+                                        {/* Professor / Atleta */}
+                                      </p>
+                                    </li>
+                                    <li className="detalhes-item">
+                                      <p> Data de Nascimento: </p>
+                                      <p>{aluno.data_nascimento}</p>
+                                    </li>
+                                  </ul>
+                                )}
+                              </ul>
+                            </>
+                          ))}
+                        </S.ListaAlunos>
                       </S.EquipeHeader>
                       <hr />
                     </div>

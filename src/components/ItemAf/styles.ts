@@ -3,6 +3,10 @@ import styled from "styled-components";
 // import { animated } from "@react-spring/web";
 import colors from "../../styles/variables";
 
+type ListaAlunosProps = {
+  dynamicheight: number;
+};
+
 export const Container = styled.div`
   /* max-width: 100%; */
   width: 100%;
@@ -217,13 +221,17 @@ export const EquipeHeader = styled.div`
   }
 `;
 
-export const ListaAlunos = styled.div`
+export const ListaAlunos = styled.div<ListaAlunosProps>`
   width: 100%;
+  height: 0;
+  overflow: hidden;
   background-color: ${colors.white};
   color: ${colors.black};
 
   border-radius: 16px;
   margin: 32px 0;
+
+  transition: all 0.5s ease-in-out;
 
   @media (max-width: 768px) {
     font-size: 14px;
@@ -319,6 +327,10 @@ export const ListaAlunos = styled.div`
     @media (max-width: 768px) {
       display: none;
     }
+  }
+
+  &.active {
+    height: ${(props) => props.dynamicheight}px;
   }
 `;
 
