@@ -23,11 +23,14 @@ const SwiperHome = () => {
     >
       <S.Text className="container">
         <h2>
-          A força não vem da capacidade física, mas de uma vontade indomável.
+          "Quanto mais suor derramado em treinamento, menos sangue será
+          derramado em batalha."
         </h2>
-        <p>“Mahatma Gandhi”</p>
+        {/* <p>“Mahatma Gandhi”</p> */}
         <a href="#contato">
-          <button type="button" title="Entre em contato">Faça parte do nossa família</button>
+          <button type="button" title="Entre em contato">
+            Faça parte do nossa família
+          </button>
         </a>
       </S.Text>
       <S.SwiperSlideCustom>
