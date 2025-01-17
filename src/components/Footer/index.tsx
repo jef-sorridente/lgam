@@ -119,7 +119,12 @@ const Footer = () => {
             </svg>
             contato@lgam.com.br
           </p>
-          <p className="social">
+          <a
+            href="https://wa.me/5551995467409"
+            target="_blank"
+            title="whatsApp"
+            className="social"
+          >
             <svg
               width="28"
               height="28"
@@ -140,9 +145,14 @@ const Footer = () => {
                 fill="white"
               />
             </svg>
-            +55 51 9 9999-9999
-          </p>
-          <p className="social">
+            +55 (51) 9 9546-7409
+          </a>
+          <a
+            href="https://wa.me/5551995467409"
+            target="_blank"
+            title="whatsApp"
+            className="social"
+          >
             <svg
               width="28"
               height="28"
@@ -157,8 +167,8 @@ const Footer = () => {
                 fill="white"
               />
             </svg>
-            +55 51 9 9999-9999
-          </p>
+            +55 (51) 9 9546-7409
+          </a>
         </List>
       </FooterTop>
       <FooterBottom>

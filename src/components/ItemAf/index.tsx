@@ -60,6 +60,7 @@ const ItemAf = () => {
       ...prev,
       [alunoID]: !prev[alunoID],
     }));
+
     setIsActiveDetails(!isActiveDetails);
   };
 
@@ -105,127 +106,141 @@ const ItemAf = () => {
             {selectedEquipes.length > 0 && (
               // Equipes
               <S.Equipe>
-                {selectedEquipes.map((equipe) => (
-                  <div key={equipe.id}>
-                    <S.EquipeHeader>
-                      <S.FotosEquipe>
-                        <img
-                          src={equipe.foto_academia}
-                          alt={equipe.nome_equipe}
-                        />
-                        <img
-                          src={
-                            equipe.foto_responsavel
-                              ? equipe.foto_responsavel
-                              : userPhotoDefaut
-                          }
-                          alt={equipe.nome_equipe}
-                        />
-                      </S.FotosEquipe>
+                {selectedEquipes.map((equipe) => {
+                  const sortedFiliados = [...equipe.alunos_filiados].sort(
+                    (a, b) => a.nome_aluno.localeCompare(b.nome_aluno)
+                  );
 
-                      <S.InfoEquipe>
-                        <h2>Equipe {equipe.nome_equipe}</h2>
-                        <p>
-                          <strong>Alvará: </strong>
-                          {equipe.alvara_valido ? "Válido" : "Inválido"}
-                        </p>
-                        <p>
-                          <strong>Responsável: </strong>
-                          {equipe.responsavel}
-                        </p>
-                        <p>
-                          <strong>Endereço:</strong> {equipe.endereco}
-                        </p>
-                        <p>
-                          <strong>Contato: </strong>
-                          {equipe.contato}
-                        </p>
-                      </S.InfoEquipe>
+                  return (
+                    <div key={equipe.id}>
+                      <S.EquipeHeader>
+                        <S.FotosEquipe>
+                          <img
+                            src={equipe.foto_academia}
+                            alt={equipe.nome_equipe}
+                          />
+                          <img
+                            src={
+                              equipe.foto_responsavel
+                                ? equipe.foto_responsavel
+                                : userPhotoDefaut
+                            }
+                            alt={equipe.nome_equipe}
+                          />
+                        </S.FotosEquipe>
 
-                      {/* Alunos Filiados */}
-                      <h2
-                        className="titulo-filiados"
-                        onClick={() => handleFiliadosClick(equipe.id)}
-                      >
-                        Filiados da equipe <FaArrowRight />
-                      </h2>
-                      {openFiliados[equipe.id] && (
-                        <S.ListaAlunos key={equipe.id}>
-                          <ul className="lista-header">
-                            <li></li>
-                            <li>Nome</li>
-                            <li className="d-mobile-none">Graduação</li>
-                            <li className="d-mobile-none">
-                              Data de Nascimento
-                            </li>
-                          </ul>
+                        <S.InfoEquipe>
+                          <h2>Equipe {equipe.nome_equipe}</h2>
+                          <p>
+                            <strong>Alvará: </strong>
+                            {equipe.alvara_valido ? "Válido" : "Inválido"}
+                          </p>
+                          <p>
+                            <strong>Responsável: </strong>
+                            {equipe.responsavel}
+                          </p>
+                          <p>
+                            <strong>Endereço:</strong> {equipe.endereco}
+                          </p>
+                          <p>
+                            <strong>Contato: </strong>
+                            <a
+                              href={`https://wa.me/${equipe.contato}`}
+                              target="_blank"
+                              title={`WhatsApp: ${equipe.nome_equipe}`}
+                            >
+                              {equipe.contato}
+                            </a>
+                          </p>
+                        </S.InfoEquipe>
 
-                          {equipe.alunos_filiados.map((aluno) => (
-                            <>
-                              <ul
-                                className={`lista-body ${
-                                  isActiveDetails ? "active" : ""
-                                }`}
-                              >
-                                <li className="foto-aluno">
-                                  <img
-                                    src={
-                                      aluno.foto ? aluno.foto : userPhotoDefaut
-                                    }
-                                    alt={aluno.nome_aluno}
-                                  />
-                                </li>
-                                <li className="list-item social">
-                                  <p>{aluno.nome_aluno}</p>
-                                  {/* <p>@instagram</p> */}
-                                </li>
-                                <li className="list-item social d-mobile-none">
-                                  {/* <p>Professor / Atleta</p> */}
-                                  <p>{aluno.graduacao}</p>
-                                </li>
-                                <li className="list-item d-mobile-none">
-                                  {aluno.data_nascimento}
-                                </li>
-                                <li
-                                  className="detalhes"
-                                  onClick={() => handleDetailsClick(aluno.id)}
+                        {/* Alunos Filiados */}
+                        <h2
+                          className="titulo-filiados"
+                          onClick={() => handleFiliadosClick(equipe.id)}
+                        >
+                          Filiados da equipe <FaArrowRight />
+                        </h2>
+                        {openFiliados[equipe.id] && (
+                          <S.ListaAlunos key={equipe.id}>
+                            <ul className="lista-header">
+                              <li></li>
+                              <li>Nome</li>
+                              <li className="d-mobile-none">Graduação</li>
+                              <li className="d-mobile-none">
+                                Data de Nascimento
+                              </li>
+                            </ul>
+
+                            {sortedFiliados.map((aluno) => (
+                              <>
+                                <ul
+                                  className={`lista-body ${
+                                    isActiveDetails ? "active" : ""
+                                  }`}
                                 >
-                                  Detalhes <GoPlus />
-                                </li>
+                                  <li className="foto-aluno">
+                                    <img
+                                      src={
+                                        aluno.foto
+                                          ? aluno.foto
+                                          : userPhotoDefaut
+                                      }
+                                      alt={aluno.nome_aluno}
+                                    />
+                                  </li>
+                                  <li className="list-item social">
+                                    <p>{aluno.nome_aluno}</p>
+                                    {/* <p>@instagram</p> */}
+                                  </li>
+                                  <li className="list-item social d-mobile-none">
+                                    {/* <p>Professor / Atleta</p> */}
+                                    <p>{aluno.graduacao}</p>
+                                  </li>
+                                  <li className="list-item d-mobile-none">
+                                    {aluno.data_nascimento}
+                                  </li>
+                                  <li
+                                    className="detalhes"
+                                    onClick={() => handleDetailsClick(aluno.id)}
+                                  >
+                                    Detalhes <GoPlus />
+                                  </li>
 
-                                {openDetails[aluno.id] && (
-                                  <ul className="detalhes-open">
-                                    <li className="detalhes-item">
-                                      <p>Nº registro LGAM:</p>
-                                      <p>{aluno.n_lgam}</p>
-                                    </li>
-                                    <li className="detalhes-item">
-                                      <p>Nº registro Liga Nacional: </p>
-                                      <p>{aluno.n_liga_nacional}</p>
-                                    </li>
+                                  {openDetails[aluno.id] && (
+                                    <ul className="detalhes-open">
+                                      <li className="detalhes-item">
+                                        <p>Nº registro LGAM:</p>
+                                        <p>{aluno.n_lgam}</p>
+                                      </li>
+                                      <li className="detalhes-item">
+                                        <p>Nº registro Liga Nacional: </p>
+                                        <p>{aluno.n_liga_nacional}</p>
+                                      </li>
 
-                                    <li className="detalhes-item">
-                                      <p>Graduação: </p>
-                                      <p>
-                                        {aluno.graduacao}
-                                        {/* Professor / Atleta */}
-                                      </p>
-                                    </li>
-                                    <li className="detalhes-item">
-                                      <p> Data de Nascimento: </p>
-                                      <p>{aluno.data_nascimento}</p>
-                                    </li>
-                                  </ul>
-                                )}
-                              </ul>
-                            </>
-                          ))}
-                        </S.ListaAlunos>
-                      )}
-                    </S.EquipeHeader>
-                    <hr />
-                  </div>
-                ))}
+                                      <li className="detalhes-item">
+                                        <p>Graduação: </p>
+                                        <p>
+                                          {aluno.graduacao}
+                                          {/* Professor / Atleta */}
+                                        </p>
+                                      </li>
+                                      <li className="detalhes-item">
+                                        <p> Data de Nascimento: </p>
+                                        <p>{aluno.data_nascimento}</p>
+                                      </li>
+                                    </ul>
+                                  )}
+                                </ul>
+                              </>
+                            ))}
+                          </S.ListaAlunos>
+                        )}
+                      </S.EquipeHeader>
+                      <hr />
+                    </div>
+                  );
+                })}
               </S.Equipe>
               // Equipes
             )}

@@ -87,6 +87,7 @@ export const List = styled.div`
     display: flex;
     align-items: center;
     gap: 6px;
+    color: #fff;
 
     @media (max-width: 768px) {
       width: fit-content;

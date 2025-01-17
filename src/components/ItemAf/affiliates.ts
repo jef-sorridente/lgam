@@ -7,20 +7,24 @@ import eliane from "./Images/liane.jpg";
 import joao from "./Images/joao.jpg";
 import emanuele from "./Images/emauele.jpg";
 import wellington from "./Images/wellington.jpg";
+import gabriel from "./Images/gabriel.jpg";
 
 // The Flash
 import eduardo from "./Images/eduardo.jpg";
 
 // Spider
 import spider from "./Images/equipes/spider.jpg";
+import paulo from "./Images/paulo.jpg";
 import luis from "./Images/luis.jpg";
 
 // Dragon
 import dragon from "./Images/equipes/dragon.jpg";
 import luciano from "./Images/luciano.jpg";
+import sabrina from "./Images/sabrina.jpg";
 
-// Dragon
+// Mid
 import mid from "./Images/equipes/mid.jpg";
+import andre from "./Images/andre.jpg";
 
 export const Cidades = {
   cidade: [
@@ -35,7 +39,7 @@ export const Cidades = {
           alvara_valido: true,
           responsavel: "Francisco Chagas da Luz",
           endereco: "Rua Bartolomeu de Gusmão 1411 - Canudos",
-          contato: "51 9 9546-7409",
+          contato: "51995467409",
           alunos_filiados: [
             {
               id: 1,
@@ -109,17 +113,26 @@ export const Cidades = {
               n_liga_nacional: "4080",
               foto: wellington,
             },
+            {
+              id: 9,
+              nome_aluno: "Gabriel Antunes Borges",
+              graduacao: "1º Dan",
+              data_nascimento: "11/08/1996",
+              n_lgam: "4637/2024",
+              n_liga_nacional: "",
+              foto: gabriel,
+            },
           ],
         },
         {
           id: 5,
           nome_equipe: "Spider",
           foto_academia: spider,
-          foto_responsavel: "",
+          foto_responsavel: paulo,
           alvara_valido: true,
           responsavel: "Paulo Ferreira",
           endereco: "Rua Gen. Cândido Mariano da Silva Rondon, 668 - Rondônia",
-          contato: "51 9 9589-5612",
+          contato: "51995895612",
           alunos_filiados: [
             {
               id: 1,
@@ -128,7 +141,7 @@ export const Cidades = {
               data_nascimento: "22/10/1975",
               n_lgam: "0033/2024",
               n_liga_nacional: "",
-              foto: "",
+              foto: paulo,
             },
             {
               id: 2,
@@ -154,7 +167,7 @@ export const Cidades = {
           alvara_valido: true,
           responsavel: "Eduardo Flores",
           endereco: "Rua Caetano José Munhoz 306 - Vicentina Associação Ambav",
-          contato: "51 9 9242-7544",
+          contato: "51992427544",
           alunos_filiados: [
             {
               id: 1,
@@ -176,12 +189,12 @@ export const Cidades = {
           id: 3,
           nome_equipe: "Mid Night Team",
           foto_academia: mid,
-          foto_responsavel: "",
+          foto_responsavel: andre,
           alvara_valido: true,
           responsavel: "André Felippe",
           endereco:
             "Rua do Governador Roberto Silveira 40 3 andar - Centro Macaé",
-          contato: "51 9 8023-3734",
+          contato: "51980233734",
           alunos_filiados: [
             {
               id: 1,
@@ -190,7 +203,7 @@ export const Cidades = {
               data_nascimento: "15/05/1996",
               n_lgam: "",
               n_liga_nacional: "4048",
-              foto: "",
+              foto: andre,
             },
           ],
         },
@@ -207,7 +220,7 @@ export const Cidades = {
           alvara_valido: true,
           responsavel: "Luciano da Silva",
           endereco: "Rua Dr. Hans Varelmann, 205 - São Paulo, Montenegro - RS",
-          contato: "51 9 9582-1591",
+          contato: "51995821591",
           alunos_filiados: [
             {
               id: 1,
@@ -217,6 +230,15 @@ export const Cidades = {
               n_lgam: "",
               n_liga_nacional: "3704",
               foto: luciano,
+            },
+            {
+              id: 2,
+              nome_aluno: "Sabrina Eduarda da Silva",
+              graduacao: "1° Dan",
+              data_nascimento: "01/04/2013",
+              n_lgam: "",
+              n_liga_nacional: "4636",
+              foto: sabrina,
             },
           ],
         },

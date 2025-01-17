@@ -348,6 +348,10 @@ export const InfoEquipe = styled.div`
   h2 {
     font-weight: 600;
   }
+
+  a {
+    color: #fff;
+  }
 `;
 
 // export const InfosDireita = styled.div`
