@@ -10,6 +10,7 @@ import Title from "../../components/Title";
 import * as S from "./styles";
 
 import { Valores } from "./val";
+import Line from "../../components/Line";
 
 const About = () => {
   const Items = [];
@@ -22,6 +23,7 @@ const About = () => {
     <>
       {/* Quem somos */}
       <S.QuemSomos>
+        <Line />
         <S.ConatinerSection className="container">
           <S.ContainerTexts>
             <Title>Quem somos?</Title>

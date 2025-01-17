@@ -3,6 +3,8 @@ import colors from "../../styles/variables";
 
 export const Gallery = styled.section`
   background-color: ${colors.black};
+  overflow: hidden;
+  position: relative;
 `;
 
 export const Container = styled.section`

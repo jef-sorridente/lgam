@@ -163,6 +163,7 @@ export const Icons = styled.span`
 export const QuemSomos = styled(ConatinerSection)`
   background-color: ${colors.black};
   padding: 100px 0;
+  overflow: hidden;
 `;
 
 export const Missao = styled(ConatinerSection)`
