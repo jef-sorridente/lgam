@@ -3,7 +3,6 @@ import ItemAf from "../../components/ItemAf";
 import background from "../../assets/images/Affiliates/background.webp";
 
 import * as S from "./styles";
-import Line from "../../components/Line";
 
 const Affiliates = () => {
   return (
