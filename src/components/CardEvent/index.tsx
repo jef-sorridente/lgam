@@ -23,6 +23,19 @@ type Events = {
 const CardEvent = () => {
   const [openCard, setOpenCard] = useState<Events | null>(null);
   const [swiperOpen, setSwiperOpen] = useState<boolean>(false);
+  const [eventosAgrupados, setEventosAgrupados] = useState<any>({});
+
+  useEffect(() => {
+    const agrupados = Events.reduce((acc, evento) => {
+      if (!acc[evento.ano]) {
+        acc[evento.ano] = [];
+      }
+      acc[evento.ano].push(evento);
+      return acc;
+    }, {});
+
+    setEventosAgrupados(agrupados);
+  }, []);
 
   useEffect(() => {
     if (swiperOpen) {
@@ -48,25 +61,33 @@ const CardEvent = () => {
 
   return (
     <>
-      {Events.map((evento) => (
-        <S.Card
-          key={evento.id}
-          onClick={() => {
-            setOpenCard(evento);
-            setSwiperOpen(true);
-          }}
-        >
-          <S.Header>
-            <S.Title>{evento.titulo}</S.Title>
-            <S.Date>
-              {evento.dia}/{evento.mes}/{evento.ano}
-            </S.Date>
-          </S.Header>
-          <S.Body>
-            <S.Img src={evento.thumbnail} />
-            <span></span>
-          </S.Body>
-        </S.Card>
+      {Object.keys(eventosAgrupados).map((ano) => (
+        <div key={ano} className="container-year">
+          <h2 className="year">Eventos de {ano}</h2>
+          <div className="card-container">
+            {eventosAgrupados[ano].map((evento) => (
+              <S.Card
+                key={evento.id}
+                onClick={() => {
+                  setOpenCard(evento);
+                  setSwiperOpen(true);
+                }}
+              >
+                <S.Header>
+                  <S.Title>{evento.titulo}</S.Title>
+                  <S.Date>
+                    {evento.dia && evento.dia + "/"}
+                    {evento.mes}/{evento.ano}
+                  </S.Date>
+                </S.Header>
+                <S.Body>
+                  <S.Img src={evento.thumbnail} />
+                  <span></span>
+                </S.Body>
+              </S.Card>
+            ))}
+          </div>
+        </div>
       ))}
       {transition(
         (styles, item) =>

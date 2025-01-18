@@ -11,6 +11,7 @@ import gabriel from "./Images/gabriel.jpg";
 
 // The Flash
 import eduardo from "./Images/eduardo.jpg";
+import theflash from "./Images/equipes/theflash.jpg";
 
 // Spider
 import spider from "./Images/equipes/spider.jpg";
@@ -25,6 +26,10 @@ import sabrina from "./Images/sabrina.jpg";
 // Mid
 import mid from "./Images/equipes/mid.jpg";
 import andre from "./Images/andre.jpg";
+
+// Mid
+import soobak from "./Images/equipes/soobak.jpg";
+import eder from "./Images/eder.jpg";
 
 export const Cidades = {
   cidade: [
@@ -162,7 +167,7 @@ export const Cidades = {
         {
           id: 2,
           nome_equipe: "The Flash",
-          foto_academia: "",
+          foto_academia: theflash,
           foto_responsavel: eduardo,
           alvara_valido: true,
           responsavel: "Eduardo Flores",
@@ -239,6 +244,33 @@ export const Cidades = {
               n_lgam: "",
               n_liga_nacional: "4636",
               foto: sabrina,
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      nome: "Santa Maria",
+      equipes: [
+        {
+          id: 4,
+          nome_equipe: "CT Soobak",
+          foto_academia: soobak,
+          foto_responsavel: eder,
+          alvara_valido: true,
+          responsavel: "Eder",
+          endereco: "Rua Anita Garibalde, 11 - Itararé, Santa Maria",
+          contato: "55999372615",
+          alunos_filiados: [
+            {
+              id: 1,
+              nome_aluno: "Eder",
+              graduacao: "",
+              data_nascimento: "",
+              n_lgam: "",
+              n_liga_nacional: "",
+              foto: eder,
             },
           ],
         },

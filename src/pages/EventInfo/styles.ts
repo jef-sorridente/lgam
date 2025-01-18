@@ -42,6 +42,7 @@ export const ConatinerSection = styled.div`
 
 export const ContainerCard = styled.div`
   display: flex;
+  flex-direction: column-reverse;
   flex-wrap: wrap;
   justify-content: start;
   /* animation: anim-opacity 2s ease both; */
@@ -50,6 +51,33 @@ export const ContainerCard = styled.div`
     width: 100%;
     justify-content: center;
     gap: 32px;
+  }
+
+  .year {
+    font-size: 32px;
+    color: ${colors.white};
+    margin-bottom: 16px;
+    margin-top: 32px;
+  }
+
+  .container-year {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    @media (max-width: 768px) {
+      align-items: center;
+    }
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
   }
 `;
 

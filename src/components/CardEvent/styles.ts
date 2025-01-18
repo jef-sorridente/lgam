@@ -3,22 +3,23 @@ import variables from "../../styles/variables";
 import { animated } from "@react-spring/web";
 import colors from "../../styles/variables";
 
+export const ContainerCards = styled.div`
+  display: flex;
+`;
+
 export const Card = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
   height: 400px;
   width: 400px;
+  padding: 16px;
 
   cursor: pointer;
 
   &:hover span {
     opacity: 0.4;
   }
-
-  /* @media (max-width: 1024px) {
-    width: 49%;
-  }*/
 
   @media (max-width: 768px) {
     justify-content: center;
@@ -76,6 +77,7 @@ export const Body = styled.main`
 
 export const Img = styled.img`
   width: 100%;
+  height: 100%;
   object-fit: cover;
 
   position: absolute;
