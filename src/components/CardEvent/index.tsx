@@ -23,10 +23,12 @@ type Events = {
 const CardEvent = () => {
   const [openCard, setOpenCard] = useState<Events | null>(null);
   const [swiperOpen, setSwiperOpen] = useState<boolean>(false);
-  const [eventosAgrupados, setEventosAgrupados] = useState<any>({});
+  const [eventosAgrupados, setEventosAgrupados] = useState<
+    Record<string, Events[]>
+  >({});
 
   useEffect(() => {
-    const agrupados = Events.reduce((acc, evento) => {
+    const agrupados = Events.reduce<Record<string, Events[]>>((acc, evento) => {
       if (!acc[evento.ano]) {
         acc[evento.ano] = [];
       }
@@ -65,7 +67,7 @@ const CardEvent = () => {
         <div key={ano} className="container-year">
           <h2 className="year">Eventos de {ano}</h2>
           <div className="card-container">
-            {eventosAgrupados[ano].map((evento) => (
+            {eventosAgrupados[ano].map((evento: Events) => (
               <S.Card
                 key={evento.id}
                 onClick={() => {
@@ -102,8 +104,6 @@ const CardEvent = () => {
                     </p>
                   </S.Date>
                 </S.CardFullSizeHeader>
-                {/* Header */}
-
                 <S.CardFullBody>
                   <S.CardFullImg src={item.foto} />
                   <S.Infos>
@@ -150,7 +150,6 @@ const CardEvent = () => {
                     )}
                   </S.Infos>
                 </S.CardFullBody>
-                {/* Body */}
               </S.CardFullSize>
               <S.ButtomClose
                 onClick={() => {
@@ -160,7 +159,6 @@ const CardEvent = () => {
               >
                 Voltar
               </S.ButtomClose>
-              {/* Botão Fechar */}
             </S.ContainerCardFull>
           )
       )}
