@@ -330,7 +330,8 @@ export const ListaAlunos = styled.div<ListaAlunosProps>`
   }
 
   &.active {
-    height: ${(props) => props.dynamicheight}px;
+    min-height: ${(props) => props.dynamicheight}px;
+    height: 100%;
   }
 `;
 
