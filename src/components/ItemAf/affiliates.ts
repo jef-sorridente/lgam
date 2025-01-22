@@ -8,6 +8,16 @@ import joao from "./Images/joao.jpg";
 import emanuele from "./Images/emauele.jpg";
 import wellington from "./Images/wellington.jpg";
 import gabriel from "./Images/gabriel.jpg";
+import daniel_jardin from "./Images/Kim/Daniel jardin.png";
+import daniel_lasta from "./Images/Kim/Daniel lasta.png";
+import davi from "./Images/Kim/Davi Van.png";
+import donavan from "./Images/Kim/Donavan.png";
+// import iezael from "./Images/Kim/Iezael.png";
+import joao_marque from "./Images/Kim/João marque.png";
+import maiqueli from "./Images/Kim/Maiqueli.png";
+import maiquel from "./Images/Kim/Maiquel.png";
+import yasmin from "./Images/Kim/Yasmin.png";
+// import yuri from "./Images/Kim/Yuri.png";
 
 // The Flash
 import eduardo from "./Images/eduardo.jpg";
@@ -122,10 +132,82 @@ export const Cidades = {
               id: 9,
               nome_aluno: "Gabriel Antunes Borges",
               graduacao: "1º Dan",
-              data_nascimento: "11/08/1996",
+              data_nascimento: "12/08/1996",
               n_lgam: "4637/2024",
               n_liga_nacional: "",
               foto: gabriel,
+            },
+            {
+              id: 10,
+              nome_aluno: "Daniel Filipe Jardim Gomes",
+              graduacao: "Faixa Colorida",
+              data_nascimento: "",
+              n_lgam: "",
+              n_liga_nacional: "",
+              foto: daniel_jardin,
+            },
+            {
+              id: 11,
+              nome_aluno: "Daniel Robson Lasta Silveira",
+              graduacao: "Faixa Colorida",
+              data_nascimento: "",
+              n_lgam: "",
+              n_liga_nacional: "",
+              foto: daniel_lasta,
+            },
+            {
+              id: 12,
+              nome_aluno: "Davi Van Leeuven Leichtweis",
+              graduacao: "Faixa Colorida",
+              data_nascimento: "",
+              n_lgam: "",
+              n_liga_nacional: "",
+              foto: davi,
+            },
+            {
+              id: 13,
+              nome_aluno: "Donavan Leichtweis",
+              graduacao: "Faixa Colorida",
+              data_nascimento: "",
+              n_lgam: "",
+              n_liga_nacional: "",
+              foto: donavan,
+            },
+            {
+              id: 14,
+              nome_aluno: "João Gabriel Schefler Bin",
+              graduacao: "Faixa Colorida",
+              data_nascimento: "",
+              n_lgam: "",
+              n_liga_nacional: "",
+              foto: joao_marque,
+            },
+            {
+              id: 15,
+              nome_aluno: "Maiqueli Lasta Silveira",
+              graduacao: "Faixa Colorida",
+              data_nascimento: "",
+              n_lgam: "",
+              n_liga_nacional: "",
+              foto: maiqueli,
+            },
+            {
+              id: 16,
+              nome_aluno: "Maiquel Aires Cardoso Silveira",
+              graduacao: "Faixa Colorida",
+              data_nascimento: "",
+              n_lgam: "",
+              n_liga_nacional: "",
+              foto: maiquel,
+            },
+            {
+              id: 17,
+              nome_aluno: "Yasmin Fabiana de Souza",
+              graduacao: "Faixa Colorida",
+              data_nascimento: "",
+              n_lgam: "",
+              n_liga_nacional: "",
+              foto: yasmin,
             },
           ],
         },
@@ -249,7 +331,6 @@ export const Cidades = {
         },
       ],
     },
-
     {
       nome: "Santa Maria",
       equipes: [
