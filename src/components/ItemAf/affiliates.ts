@@ -42,7 +42,7 @@ import eder from "./Images/soobak/eder.jpg";
 
 // Mid
 import sirius from "./Images/sirius/sirus.jpg";
-import daniel_mello from "./Images/sirius/daniel_mello.jpg";
+import paulo_anziliero from "./Images/sirius/paulo_anziliero.jpg";
 
 export const Cidades = {
   cidade: [
@@ -385,20 +385,20 @@ export const Cidades = {
           id: 6,
           nome_equipe: "Centro de Treinamento Sírius",
           foto_academia: sirius,
-          foto_responsavel: daniel_mello,
+          foto_responsavel: paulo_anziliero,
           alvara_valido: true,
-          responsavel: "Daniel Mello",
+          responsavel: "Paulo Anziliero Nunes",
           endereco: "Rua Nordeste, 40 - Estancia Velha, Canoas",
           contato: "(51) 8574-7493",
           alunos_filiados: [
             {
               id: 1,
-              nome_aluno: "Daniel Mello",
+              nome_aluno: "Paulo Anziliero Nunes",
               graduacao: "2° Dan",
               data_nascimento: "",
               n_lgam: "",
               n_liga_nacional: "",
-              foto: daniel_mello,
+              foto: paulo_anziliero,
             },
           ],
         },
