@@ -96,6 +96,7 @@ export const List = styled.div`
   }
 
   .redes {
+    margin-top: 6px;
     @media (max-width: 768px) {
       justify-content: center;
     }
@@ -104,6 +105,21 @@ export const List = styled.div`
   &.d-mobilde-none {
     @media (max-width: 768px) {
       display: none;
+    }
+  }
+
+  a {
+    color: #fff;
+  }
+
+  .logos {
+    display: flex;
+    gap: 32px;
+    max-width: 250px;
+    margin: auto;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
     }
   }
 `;

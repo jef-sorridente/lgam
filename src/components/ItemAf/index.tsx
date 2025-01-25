@@ -99,9 +99,11 @@ const ItemAf = () => {
               </div>
               <S.CardFiliar>
                 <S.Title>Fale conosco e filie-se!</S.Title>
-                <S.Button type="button" title="Quero me filiar">
-                  Quero me filiar
-                </S.Button>
+                <a href="https://wa.me/5551985297929" target="_blank">
+                  <S.Button type="button" title="Quero me filiar">
+                    Quero me filiar
+                  </S.Button>
+                </a>
               </S.CardFiliar>
             </S.InfosEsquerda>
             {/* Informações */}

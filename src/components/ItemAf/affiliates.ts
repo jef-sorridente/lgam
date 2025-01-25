@@ -1,45 +1,48 @@
 // Alunos Kim
-import kim_logo from "./Images/equipes/kim.jpg";
-import chico from "./Images/chico.jpg";
-import alceni from "./Images/alceni.jpg";
-import batista from "./Images/batista.jpg";
-import eliane from "./Images/liane.jpg";
-import joao from "./Images/joao.jpg";
-import emanuele from "./Images/emauele.jpg";
-import wellington from "./Images/wellington.jpg";
-import gabriel from "./Images/gabriel.jpg";
+import kim_logo from "./Images/Kim/kim.jpg";
+import chico from "./Images/Kim/chico.jpg";
+import alceni from "./Images/Kim/alceni.jpg";
+import batista from "./Images/Kim/batista.jpg";
+import eliane from "./Images/Kim/liane.jpg";
+import joao from "./Images/Kim/joao.jpg";
+import emanuele from "./Images/Kim/emauele.jpg";
+import wellington from "./Images/Kim/wellington.jpg";
+import gabriel from "./Images/Kim/gabriel.jpg";
 import daniel_jardin from "./Images/Kim/Daniel jardin.png";
 import daniel_lasta from "./Images/Kim/Daniel lasta.png";
 import davi from "./Images/Kim/Davi Van.png";
 import donavan from "./Images/Kim/Donavan.png";
-// import iezael from "./Images/Kim/Iezael.png";
 import joao_marque from "./Images/Kim/João marque.png";
 import maiqueli from "./Images/Kim/Maiqueli.png";
 import maiquel from "./Images/Kim/Maiquel.png";
 import yasmin from "./Images/Kim/Yasmin.png";
-// import yuri from "./Images/Kim/Yuri.png";
+import lucas from "./Images/Kim/lucas_teixeira 1.png";
 
 // The Flash
-import eduardo from "./Images/eduardo.jpg";
-import theflash from "./Images/equipes/theflash.jpg";
+import eduardo from "./Images/theflash/eduardo.jpg";
+import theflash from "./Images/theflash/theflash.jpg";
 
 // Spider
-import spider from "./Images/equipes/spider.jpg";
-import paulo from "./Images/paulo.jpg";
-import luis from "./Images/luis.jpg";
+import spider from "./Images/spider/spider.jpg";
+import paulo from "./Images/spider/paulo.jpg";
+import luis from "./Images/spider/luis.jpg";
 
 // Dragon
-import dragon from "./Images/equipes/dragon.jpg";
-import luciano from "./Images/luciano.jpg";
-import sabrina from "./Images/sabrina.jpg";
+import dragon from "./Images/dragon/dragon.jpg";
+import luciano from "./Images/dragon/luciano.jpg";
+import sabrina from "./Images/dragon/sabrina.jpg";
 
 // Mid
-import mid from "./Images/equipes/mid.jpg";
-import andre from "./Images/andre.jpg";
+import mid from "./Images/mid/mid.jpg";
+import andre from "./Images/mid/andre.jpg";
 
 // Mid
-import soobak from "./Images/equipes/soobak.jpg";
-import eder from "./Images/eder.jpg";
+import soobak from "./Images/soobak/soobak.jpg";
+import eder from "./Images/soobak/eder.jpg";
+
+// Mid
+import sirius from "./Images/sirius/sirus.jpg";
+import daniel_mello from "./Images/sirius/daniel_mello.jpg";
 
 export const Cidades = {
   cidade: [
@@ -77,7 +80,7 @@ export const Cidades = {
             {
               id: 3,
               nome_aluno: "Carlos Antonio Batista",
-              graduacao: "Faixa Colorida",
+              graduacao: "6° Gub",
               data_nascimento: "30/07/1973",
               n_lgam: "0031/2024",
               n_liga_nacional: "",
@@ -140,8 +143,8 @@ export const Cidades = {
             {
               id: 10,
               nome_aluno: "Daniel Filipe Jardim Gomes",
-              graduacao: "Faixa Colorida",
-              data_nascimento: "",
+              graduacao: "3° Gub",
+              data_nascimento: "07/12/2009",
               n_lgam: "",
               n_liga_nacional: "",
               foto: daniel_jardin,
@@ -149,8 +152,8 @@ export const Cidades = {
             {
               id: 11,
               nome_aluno: "Daniel Robson Lasta Silveira",
-              graduacao: "Faixa Colorida",
-              data_nascimento: "",
+              graduacao: "2° Gub",
+              data_nascimento: "17/09/2012",
               n_lgam: "",
               n_liga_nacional: "",
               foto: daniel_lasta,
@@ -158,8 +161,8 @@ export const Cidades = {
             {
               id: 12,
               nome_aluno: "Davi Van Leeuven Leichtweis",
-              graduacao: "Faixa Colorida",
-              data_nascimento: "",
+              graduacao: "6° Gub",
+              data_nascimento: "27/04/2015",
               n_lgam: "",
               n_liga_nacional: "",
               foto: davi,
@@ -167,8 +170,8 @@ export const Cidades = {
             {
               id: 13,
               nome_aluno: "Donavan Leichtweis",
-              graduacao: "Faixa Colorida",
-              data_nascimento: "",
+              graduacao: "6° Gub",
+              data_nascimento: "15/08/1988",
               n_lgam: "",
               n_liga_nacional: "",
               foto: donavan,
@@ -176,8 +179,8 @@ export const Cidades = {
             {
               id: 14,
               nome_aluno: "João Gabriel Schefler Bin",
-              graduacao: "Faixa Colorida",
-              data_nascimento: "",
+              graduacao: "5° Gub",
+              data_nascimento: "11/05/2010",
               n_lgam: "",
               n_liga_nacional: "",
               foto: joao_marque,
@@ -185,8 +188,8 @@ export const Cidades = {
             {
               id: 15,
               nome_aluno: "Maiqueli Lasta Silveira",
-              graduacao: "Faixa Colorida",
-              data_nascimento: "",
+              graduacao: "2° Gub",
+              data_nascimento: "09/12/2009",
               n_lgam: "",
               n_liga_nacional: "",
               foto: maiqueli,
@@ -194,8 +197,8 @@ export const Cidades = {
             {
               id: 16,
               nome_aluno: "Maiquel Aires Cardoso Silveira",
-              graduacao: "Faixa Colorida",
-              data_nascimento: "",
+              graduacao: "5° Gub",
+              data_nascimento: "17/12/1975",
               n_lgam: "",
               n_liga_nacional: "",
               foto: maiquel,
@@ -203,16 +206,34 @@ export const Cidades = {
             {
               id: 17,
               nome_aluno: "Yasmin Fabiana de Souza",
-              graduacao: "Faixa Colorida",
-              data_nascimento: "",
+              graduacao: "3° Gub",
+              data_nascimento: "09/03/2012",
               n_lgam: "",
               n_liga_nacional: "",
               foto: yasmin,
             },
+            {
+              id: 18,
+              nome_aluno: "Leonardo Mello Cardoso",
+              graduacao: "10° Gub",
+              data_nascimento: "17/04/2012",
+              n_lgam: "",
+              n_liga_nacional: "",
+              foto: "",
+            },
+            {
+              id: 18,
+              nome_aluno: "Lucas Teixeira de Castro ",
+              graduacao: "7° Gub",
+              data_nascimento: "",
+              n_lgam: "",
+              n_liga_nacional: "",
+              foto: lucas,
+            },
           ],
         },
         {
-          id: 5,
+          id: 2,
           nome_equipe: "Spider",
           foto_academia: spider,
           foto_responsavel: paulo,
@@ -247,7 +268,7 @@ export const Cidades = {
       nome: "São Leopoldo",
       equipes: [
         {
-          id: 2,
+          id: 3,
           nome_equipe: "The Flash",
           foto_academia: theflash,
           foto_responsavel: eduardo,
@@ -273,7 +294,7 @@ export const Cidades = {
       nome: "Sobradinho",
       equipes: [
         {
-          id: 3,
+          id: 4,
           nome_equipe: "Mid Night Team",
           foto_academia: mid,
           foto_responsavel: andre,
@@ -300,7 +321,7 @@ export const Cidades = {
       nome: "Montenegro",
       equipes: [
         {
-          id: 4,
+          id: 5,
           nome_equipe: "Dragon",
           foto_academia: dragon,
           foto_responsavel: luciano,
@@ -352,6 +373,32 @@ export const Cidades = {
               n_lgam: "",
               n_liga_nacional: "",
               foto: eder,
+            },
+          ],
+        },
+      ],
+    },
+    {
+      nome: "Canoas",
+      equipes: [
+        {
+          id: 6,
+          nome_equipe: "Centro de Treinamento Sírius",
+          foto_academia: sirius,
+          foto_responsavel: daniel_mello,
+          alvara_valido: true,
+          responsavel: "Daniel Mello",
+          endereco: "Rua Nordeste, 40 - Estancia Velha, Canoas",
+          contato: "(51) 8574-7493",
+          alunos_filiados: [
+            {
+              id: 1,
+              nome_aluno: "Daniel Mello",
+              graduacao: "2° Dan",
+              data_nascimento: "",
+              n_lgam: "",
+              n_liga_nacional: "",
+              foto: daniel_mello,
             },
           ],
         },
