@@ -12,11 +12,18 @@ import daniel_jardin from "./Images/Kim/Daniel jardin.png";
 import daniel_lasta from "./Images/Kim/Daniel lasta.png";
 import davi from "./Images/Kim/Davi Van.png";
 import donavan from "./Images/Kim/Donavan.png";
-import joao_marque from "./Images/Kim/João marque.png";
+import joao_gabriel from "./Images/Kim/Joao Gabriel schefller Bin.png";
 import maiqueli from "./Images/Kim/Maiqueli.png";
 import maiquel from "./Images/Kim/Maiquel.png";
 import yasmin from "./Images/Kim/Yasmin.png";
 import lucas from "./Images/Kim/lucas_teixeira 1.png";
+import angelaMachado from "./Images/Kim/Ângela Machado de Borba.png";
+import lucasGernhardt from "./Images/Kim/Lucas Gernhardt Goulart.png";
+import gustavoSouza from "./Images/Kim/Gustavo Souza de Mattos Ribeiro.png";
+import leonardoMello from "./Images/Kim/Leonardo Mello Cardoso.png";
+import mariaClara from "./Images/Kim/Maria Clara Dias Flores.png";
+import arthurMuller from "./Images/Kim/ArthurMuller.png";
+import andreGuedes from "./Images/Kim/AndreGuedes.png";
 
 // The Flash
 import eduardo from "./Images/theflash/eduardo.jpg";
@@ -40,9 +47,21 @@ import andre from "./Images/mid/andre.jpg";
 import soobak from "./Images/soobak/soobak.jpg";
 import eder from "./Images/soobak/eder.jpg";
 
-// Mid
+// Sirius
 import sirius from "./Images/sirius/sirus.jpg";
 import paulo_anziliero from "./Images/sirius/paulo_anziliero.jpg";
+import alexiaRibeiro from "./Images/sirius/Alexia Ribeiro Teixeira.png";
+import amandaNunes from "./Images/sirius/Amanda Nunes Lago.png";
+import antoniaSacilotto from "./Images/sirius/Antônia Sacilotto de Vargas.png";
+import audrynElizabet from "./Images/sirius/Audryn Elizabet Barros.png";
+import calebeMoraes from "./Images/sirius/Calebe Moraes dos Santos.png";
+import manuelaRibeiro from "./Images/sirius/Manuela Ribeiro Rodrigues.png";
+import mariaEduarda from "./Images/sirius/Maria Eduarda Alves Pereira.png";
+import marianaRambo from "./Images/sirius/Mariana Rambo de Souza Silva.png";
+import nicolasScorcato from "./Images/sirius/Nicolas Scorçato Parisotto.png";
+import raphaelaVieira from "./Images/sirius/Raphaela Vieira Monteiro.png";
+import ryanRamires from "./Images/sirius/Ryan Ramires Martins de Oliveira.png";
+import willianDias from "./Images/sirius/Willian Dias Almeida.png";
 
 export const Cidades = {
   cidade: [
@@ -145,7 +164,7 @@ export const Cidades = {
               nome_aluno: "Daniel Filipe Jardim Gomes",
               graduacao: "3° Gub",
               data_nascimento: "07/12/2009",
-              n_lgam: "",
+              n_lgam: "0066/20225",
               n_liga_nacional: "",
               foto: daniel_jardin,
             },
@@ -154,7 +173,7 @@ export const Cidades = {
               nome_aluno: "Daniel Robson Lasta Silveira",
               graduacao: "2° Gub",
               data_nascimento: "17/09/2012",
-              n_lgam: "",
+              n_lgam: "0058/2025",
               n_liga_nacional: "",
               foto: daniel_lasta,
             },
@@ -163,16 +182,16 @@ export const Cidades = {
               nome_aluno: "Davi Van Leeuven Leichtweis",
               graduacao: "6° Gub",
               data_nascimento: "27/04/2015",
-              n_lgam: "",
+              n_lgam: "0056/2025",
               n_liga_nacional: "",
               foto: davi,
             },
             {
               id: 13,
-              nome_aluno: "Donavan Leichtweis",
+              nome_aluno: "Dônavan Leichtweis",
               graduacao: "6° Gub",
               data_nascimento: "15/08/1988",
-              n_lgam: "",
+              n_lgam: "0057/2025",
               n_liga_nacional: "",
               foto: donavan,
             },
@@ -183,14 +202,14 @@ export const Cidades = {
               data_nascimento: "11/05/2010",
               n_lgam: "",
               n_liga_nacional: "",
-              foto: joao_marque,
+              foto: joao_gabriel,
             },
             {
               id: 15,
               nome_aluno: "Maiqueli Lasta Silveira",
               graduacao: "2° Gub",
-              data_nascimento: "09/12/2009",
-              n_lgam: "",
+              data_nascimento: "09/02/2009",
+              n_lgam: "0054/2025",
               n_liga_nacional: "",
               foto: maiqueli,
             },
@@ -199,7 +218,7 @@ export const Cidades = {
               nome_aluno: "Maiquel Aires Cardoso Silveira",
               graduacao: "5° Gub",
               data_nascimento: "17/12/1975",
-              n_lgam: "",
+              n_lgam: "0053/2025",
               n_liga_nacional: "",
               foto: maiquel,
             },
@@ -208,27 +227,64 @@ export const Cidades = {
               nome_aluno: "Yasmin Fabiana de Souza",
               graduacao: "3° Gub",
               data_nascimento: "09/03/2012",
-              n_lgam: "",
+              n_lgam: "0055/2025",
               n_liga_nacional: "",
               foto: yasmin,
             },
             {
               id: 18,
-              nome_aluno: "Leonardo Mello Cardoso",
-              graduacao: "10° Gub",
-              data_nascimento: "17/04/2012",
-              n_lgam: "",
-              n_liga_nacional: "",
-              foto: "",
-            },
-            {
-              id: 18,
               nome_aluno: "Lucas Teixeira de Castro ",
               graduacao: "7° Gub",
-              data_nascimento: "",
-              n_lgam: "",
+              data_nascimento: "28/02/2007",
+              n_lgam: "0063/2025",
               n_liga_nacional: "",
               foto: lucas,
+            },
+            {
+              id: 19,
+              nome_aluno: "Andre de Souza Guedes",
+              graduacao: "Faixa Colorida",
+              data_nascimento: "29/11/2012",
+              n_lgam: "0069/2025",
+              n_liga_nacional: "",
+              foto: andreGuedes,
+            },
+            {
+              id: 20,
+              nome_aluno: "Arthur de Abreu Muller",
+              graduacao: "Faixa Colorida",
+              data_nascimento: "01/11/2013",
+              n_lgam: "0062/2025",
+              n_liga_nacional: "",
+              foto: arthurMuller,
+            },
+
+            {
+              id: 21,
+              nome_aluno: "Leonardo Mello Cardoso",
+              graduacao: "Faixa Colorida",
+              data_nascimento: "17/04/2012",
+              n_lgam: "0065/2025",
+              n_liga_nacional: "",
+              foto: leonardoMello,
+            },
+            {
+              id: 22,
+              nome_aluno: "Maria Clara Dias Flores",
+              graduacao: "Faixa Colorida",
+              data_nascimento: "17/06/2016",
+              n_lgam: "0067/2025",
+              n_liga_nacional: "",
+              foto: mariaClara,
+            },
+            {
+              id: 23,
+              nome_aluno: "Gustavo Souza de Mattos Ribeiro",
+              graduacao: "Faixa Colorida",
+              data_nascimento: "29/11/2012",
+              n_lgam: "0068/2025",
+              n_liga_nacional: "",
+              foto: gustavoSouza,
             },
           ],
         },
@@ -256,7 +312,7 @@ export const Cidades = {
               nome_aluno: "Luis  Gustavo Chassot",
               graduacao: "1° Dan",
               data_nascimento: "10/08/2008",
-              n_lgam: "",
+              n_lgam: "0052/2025",
               n_liga_nacional: "",
               foto: luis,
             },
@@ -285,6 +341,24 @@ export const Cidades = {
               n_lgam: "",
               n_liga_nacional: "0363",
               foto: eduardo,
+            },
+            {
+              id: 2,
+              nome_aluno: "Lucas Gernhardt Goulart",
+              graduacao: "1° Dan",
+              data_nascimento: "01/11/2013",
+              n_lgam: "0070/2025",
+              n_liga_nacional: "4781",
+              foto: lucasGernhardt,
+            },
+            {
+              id: 3,
+              nome_aluno: "Ângela Machado de Borba",
+              graduacao: "Faixa Colorida",
+              data_nascimento: "02/11/1993",
+              n_lgam: "0071/2025",
+              n_liga_nacional: "",
+              foto: angelaMachado,
             },
           ],
         },
@@ -395,10 +469,119 @@ export const Cidades = {
               id: 1,
               nome_aluno: "Paulo Anziliero Nunes",
               graduacao: "2° Dan",
-              data_nascimento: "",
-              n_lgam: "",
+              data_nascimento: "30/03/1984",
+              n_lgam: "0051/2025",
               n_liga_nacional: "",
               foto: paulo_anziliero,
+            },
+            {
+              id: 2,
+              nome_aluno: "Willian Dias Almeida",
+              graduacao: "1° Dan",
+              data_nascimento: "18/03/2011",
+              n_lgam: "0050/2025",
+              n_liga_nacional: "",
+              foto: willianDias,
+            },
+            {
+              id: 3,
+              nome_aluno: "Amanda Nunes Lago",
+              graduacao: "7° Gub",
+              data_nascimento: "09/05/2011",
+              n_lgam: "0040/2025",
+              n_liga_nacional: "",
+              foto: amandaNunes,
+            },
+            {
+              id: 4,
+              nome_aluno: "Maria Eduarda Alves Pereira",
+              graduacao: "7° Gub",
+              data_nascimento: "15/06/2015",
+              n_lgam: "0045/2025",
+              n_liga_nacional: "",
+              foto: mariaEduarda,
+            },
+            {
+              id: 5,
+              nome_aluno: "Nicolas Scorçato Parisotto",
+              graduacao: "9° Gub",
+              data_nascimento: "15/06/2005",
+              n_lgam: "0047/2025",
+              n_liga_nacional: "",
+              foto: nicolasScorcato,
+            },
+            {
+              id: 6,
+              nome_aluno: "Alexia Ribeiro Teixeira",
+              graduacao: "1° Gub",
+              data_nascimento: "18/01/2013",
+              n_lgam: "0039/2025",
+              n_liga_nacional: "",
+              foto: alexiaRibeiro,
+            },
+            {
+              id: 7,
+              nome_aluno: "Ryan Ramires Martins de Oliveira",
+              graduacao: "7° Gub",
+              data_nascimento: "04/02/2010",
+              n_lgam: "0049/2025",
+              n_liga_nacional: "",
+              foto: ryanRamires,
+            },
+            {
+              id: 8,
+              nome_aluno: "Mariana Rambo de Souza Silva",
+              graduacao: "6° Gub",
+              data_nascimento: "25/10/2010",
+              n_lgam: "0046/2025",
+              n_liga_nacional: "",
+              foto: marianaRambo,
+            },
+            {
+              id: 9,
+              nome_aluno: "Manuela Ribeiro Rodrigues",
+              graduacao: "1° Gub",
+              data_nascimento: "09/05/2013",
+              n_lgam: "0044/2025",
+              n_liga_nacional: "",
+              foto: manuelaRibeiro,
+            },
+            {
+              id: 10,
+              nome_aluno: "Calebe Moraes dos Santos",
+              graduacao: "8° Gub",
+              data_nascimento: "16/12/2012",
+              n_lgam: "0043/2025",
+              n_liga_nacional: "",
+              foto: calebeMoraes,
+            },
+            {
+              id: 11,
+              nome_aluno: "Audryn Elizabet Barros",
+              graduacao: "7° Gub",
+              data_nascimento: "29/01/2013",
+              n_lgam: "0042/2025",
+              n_liga_nacional: "",
+              foto: audrynElizabet,
+            },
+            {
+              id: 12,
+              nome_aluno: "Antônia Sacilotto de Vargas",
+              graduacao: "5° Gub",
+              data_nascimento: "10/05/2014",
+              n_lgam: "0041/2025",
+              n_liga_nacional: "",
+              foto: antoniaSacilotto,
+            },
+
+            {
+              id: 13,
+              nome_aluno: "Raphaela Vieira Monteiro",
+              graduacao: "Faixa Colorida",
+              data_nascimento: "02/11/2012",
+              n_lgam: "0048/2025",
+              n_liga_nacional: "",
+              foto: raphaelaVieira,
             },
           ],
         },
